@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+.bb{
+    margin-top: 40px;
+    box-sizing: border-box;
+    width: 160px;
+    height: 120px;
+    border: solid 1px black;
+    margin-left: 6.7%;
+    display: inline-block;
+}
+.sb{
+    
+    width: 90px;
+    height: 60px;
+    border: solid 1px red;
+    margin-top: 30;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-top: 16;
+    text-align: center;
+}
+.sb:hover{
+    background-color: chartreuse;
+}
+
+
+/* task 2*/
+h2{
+    font-size: 18px;
+    font-weight: 1;
+    font-family: 'Playfair Display', serif;
+
+}
+h3{font-size: 28px;
+font-family: 'Playfair Display', serif;
+
+}
+p{
+    width: 470px;
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+
+}
+.task2{
+    width: 470px;
+    display: inline-block;
+}
+.task2 img{
+    display: block;
+    width: 470px;
+} 
+/*task3*/
+.task3 img{
+    display: block;
+    width: 470px;    
+}
+
+.task23{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+    border: solid 1px black; 
+}
+.task3{
+    display: inline-block;
+    width: 470px;
+}
