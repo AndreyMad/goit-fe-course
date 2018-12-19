@@ -3,29 +3,17 @@ body {
     padding: 0;
     font-size: 0;
 }
-.bb{
-    margin-top: 40px;
-    box-sizing: border-box;
-    width: 160px;
-    height: 120px;
-    border: solid 1px black;
-    margin-left: 6.7%;
+li{
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
     display: inline-block;
+    margin: 60 40;
 }
-.sb{
-    
-    width: 90px;
-    height: 60px;
-    border: solid 1px red;
-    margin-top: 30;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    padding-top: 16;
+li:hover{
+    font-weight: bold;
+}
+ul{
     text-align: center;
-}
-.sb:hover{
-    background-color: chartreuse;
 }
 
 
@@ -50,15 +38,11 @@ p{
     width: 470px;
     display: inline-block;
 }
-.task2 img{
+.img{
     display: block;
     width: 470px;
 } 
 /*task3*/
-.task3 img{
-    display: block;
-    width: 470px;    
-}
 
 .task23{
     width: 1000px;
