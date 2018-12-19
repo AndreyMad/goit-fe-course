@@ -89,3 +89,6 @@ li:first-child{
     margin-right: 0;
     margin-left: 110px;
 }
+a:hover{
+    font-weight: 900;
+}
