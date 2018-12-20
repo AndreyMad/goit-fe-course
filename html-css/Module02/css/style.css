@@ -8,6 +8,7 @@ a{
     font-size: 14px;
     text-decoration: none;
     padding: 5px;
+    line-height: 80px;
 }
 li{
     display: inline-block;
@@ -91,4 +92,12 @@ li:first-child{
 }
 a:hover{
     font-weight: 900;
+}
+
+ /*работа Load More*/
+.lm{
+    display: none;
+}
+button + main:hover{
+    display: inline-block;
 }
