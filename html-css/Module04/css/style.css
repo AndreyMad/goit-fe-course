@@ -38,14 +38,17 @@ nav{
     width: 1018px;
     text-align: right;
 }
-.sitenav li:first-of-type{
+.sitenav li:hover{
     color: 1abc9c;
 }
 main li{
     font-size: 16px;
     width: 255px;
-    height: 362px;
+    height: 322px;
     background-color: #e8effc;
+    float: left;
+    list-style: none;
+    margin: 0px 15px 15px;
 }
 h1{
     height: 83px;
@@ -53,7 +56,75 @@ h1{
     font-size: 48px;
     text-transform: uppercase;
     text-align: center;
+    margin-bottom: 92px;
 }
-ul .products{
-    
+h1:after{
+    display: block;
+    border: solid 4px #1abc9c;
+    width: 166px;
+    font-size: 17px;
+    color: darkmagenta;
+    content: "";
+    margin: 32px auto 0px;
+}
+main ul{
+    height: 674px;
+    width: 1170px;
+    margin: 0px auto;
+    background-color:yellow;
+}
+main li:nth-of-type(4n+1){
+    margin-left: 30px;
+}
+main li:nth-of-type(1n+5){
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+.product{
+    width: 200px;
+    background-color: #323232;
+    float: left;
+    overflow: hidden;
+}
+.product p{
+    margin-left: 13px;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 40px;
+}
+.price{
+    width: 55px;
+    background-color: #8c8c8c;
+    float: right;
+    overflow: hidden;
+}
+.product, .price{
+    height: 40px;
+    margin-top: 282px;
+    text-align: left;
+}
+.price p::before{
+    content: "$"
+}
+.price p{
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 40px;
+    text-align: center;
+}
+main li:hover .product{
+    background-color: #1abc9c;
+}
+main li:hover .price{
+    background-color: #7fd9c7;
+}
+li:hover{
+    cursor: pointer;
+}
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
 }
