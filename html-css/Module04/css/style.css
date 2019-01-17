@@ -7,9 +7,7 @@ header{
     font-size: 18px;
     width: 1110px;
     height: 40px;
-    margin-top: 38px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 38px auto 110px;
 
 }
 .logo{
@@ -49,9 +47,13 @@ main li{
     height: 362px;
     background-color: #e8effc;
 }
-/*li .first{
-    float: left;
+h1{
+    height: 83px;
+    width: 1600px;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
 }
-li .fourth{
-    float: right;
+ul .products{
+    
 }
