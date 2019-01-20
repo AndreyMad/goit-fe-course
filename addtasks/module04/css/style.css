@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+.outer{
+    width: 400px;
+    height: 400px;
+    background-color: grey;
+    margin: 20px auto;
+    position: relative;
+}
+.inner{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+.a{
+    background-color: red;
+}
+.b{
+    background-color: green;
+    left: 150px;
+}
+.c{
+    background-color: lightpink;
+    right: 0px;
+}
+.d{
+    background-color: yellow;
+    top: 150px;
+}
+.e{
+    background-color: blue;
+    top: 150px;
+    left: 150px;
+}
+.f{
+    background-color: coral;
+    right: 0px;
+    top: 150px;
+}
+.g{
+    background-color: orange;
+    bottom: 0px;
+}
+.h{
+    background-color: green;
+    bottom: 0px;
+    left: 150px;
+}
+.j{
+    background-color: teal;
+    right: 0px;
+    bottom: 0px;
+}
