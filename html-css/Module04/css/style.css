@@ -18,10 +18,12 @@ header{
     padding: 1px;
     text-transform: uppercase;
     font-weight: 300;
+    font-family: 'Roboto', sans-serif;
 }
 .logo::first-letter{
     font-weight: 400;
     color: 1abc9c;
+    font-weight: 900;
 }
 .sitenav li{
     font-size: 14px;
@@ -29,6 +31,7 @@ header{
     display: inline-block;
     margin: auto 34px auto 0px;
     text-transform: uppercase;
+    font-family: 'myriad pro', sans-serif;
 }
 .sitenav li:last-of-type{
     margin-right: 0px;
@@ -40,6 +43,7 @@ nav{
 }
 .sitenav li:hover{
     color: 1abc9c;
+    cursor: pointer;
 }
 article li{
     font-size: 16px;
@@ -57,6 +61,7 @@ h1, h2{
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 92px;
+    font-family: 'myriad pro', sans-serif;
 }
 h1:after{
     display: block;
@@ -89,6 +94,8 @@ article li:nth-of-type(1n+5){
     color: white;
     text-transform: uppercase;
     line-height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
 }
 .price{
     width: 55px;
@@ -113,6 +120,8 @@ article li:nth-of-type(1n+5){
     text-transform: uppercase;
     line-height: 40px;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
 }
 article li:hover .product{
     background-color: #1abc9c;
@@ -142,6 +151,8 @@ h2:after{
 }
 h2{
     margin-top: 107px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
 }
 section ul{
     width: 1170px;
@@ -155,7 +166,7 @@ section li{
     float: left;
     overflow: hidden;
     margin: 0px 15px;
-    margin-bottom: ;
+
 }
 section li:first-of-type{
     margin-left: 30px;
@@ -164,16 +175,21 @@ h3{
     font-size: 18px;
     line-height: 35px;
     height: 58px;
-    margin-bottom: 52px;
+    margin-bottom: 48px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
 }
 h3:after{
     content: "";
     border: #1abc9c solid 2px;
     display: block;
     width: 136px;
+    margin-top: 8px;
 }
 section span{
     font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 .button{
     width: 160px;
@@ -191,4 +207,7 @@ section span{
 }
 .button:hover{
     cursor: pointer;
+}
+h1{
+    width: 100%;
 }
