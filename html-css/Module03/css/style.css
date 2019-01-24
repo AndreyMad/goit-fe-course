@@ -27,12 +27,20 @@ header{
 h2{
     font-family: "Playfair Display", serif;
     font-size: 14px;
+<<<<<<< HEAD:html-css/Module02/css/style.css
     color: rgb(00,00,00);
+=======
+    color: rgb(00,00,00)
+>>>>>>> a89ff28ce7c45ea955eb28c35c13827c8cdc9f3a:html-css/Module03/css/style.css
 }
 h3{
     font-family: "Playfair Display", serif;
     font-size: 30px;
+<<<<<<< HEAD:html-css/Module02/css/style.css
     color: rgb(00,00,00);
+=======
+    color: rgb(00,00,00)
+>>>>>>> a89ff28ce7c45ea955eb28c35c13827c8cdc9f3a:html-css/Module03/css/style.css
 }
 div{
     width: 420px;
@@ -101,6 +109,7 @@ li:first-child{
 a:hover{
     font-weight: 900;
 }
+<<<<<<< HEAD:html-css/Module02/css/style.css
 
  /*работа Load More*/
 /*.lm{
@@ -115,3 +124,18 @@ a .np{
     display: inline-block;
 
 }*/
+=======
+button:hover{
+    cursor: pointer;
+    font-weight: 900;
+}
+div h2{
+    margin: 33px 0px;
+}
+div h3{
+    margin: 5px 0px;
+}
+div p{
+    margin: 39px 0px 0px;
+}
+>>>>>>> a89ff28ce7c45ea955eb28c35c13827c8cdc9f3a:html-css/Module03/css/style.css
