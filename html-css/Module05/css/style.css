@@ -268,3 +268,25 @@ h3:after{
 .items:hover .price{
     background-color: #7fd9c7;
 }
+footer{
+    height: 88px;
+    background-color: #323232;
+    text-align: center;
+}
+@font-face{
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-Regular.ttf) format('ttf');    
+}
+footer span{
+    font-family: 'Open Sans';
+    font-size: 16px;
+    color: #ffffff;
+    
+    line-height: 88px;
+}
+footer span:last-of-type{
+    color: #1abc9c;
+}
+.button:hover{
+    cursor: pointer;
+}
