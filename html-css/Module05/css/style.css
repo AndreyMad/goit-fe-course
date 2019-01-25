@@ -48,7 +48,7 @@ nav{
     cursor: pointer;
 }
 main{
-    max-width: 1600px;
+    max-width: 100%;
     height: 1278px;
     background-color: #e9f0fd;
     margin-right: auto;
