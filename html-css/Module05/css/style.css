@@ -41,6 +41,7 @@ nav{
     display: inline-block;
     width: 1015px;
     text-align: right;
+
 }
 .sitenav li:hover{
     color: 1abc9c;
@@ -50,11 +51,13 @@ main{
     max-width: 1600px;
     height: 1278px;
     background-color: #e9f0fd;
+    margin-right: auto;
+    margin-left: auto;
 }
 article{
     width: 1600px;
     height: 602px;
-    background-image: url(/img/main.jpg);
+    background-image: url(./img/main.jpg);
     position: relative;
     margin-bottom: 90px;
     
