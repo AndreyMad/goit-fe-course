@@ -57,7 +57,7 @@ main{
 article{
     width: 1600px;
     height: 602px;
-    background-image: url(./img/main.jpg);
+    background-image: url(../img/main.jpg);
     position: relative;
     margin-bottom: 90px;
     
@@ -86,6 +86,8 @@ article h2{
     position: relative;
     max-width: 1010px;
     padding: 0px 10px;
+    margin-right: auto;
+    align-self: auto;
 }
 .button{
     width: 105px;
