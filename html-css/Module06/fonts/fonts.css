@@ -1,0 +1,16 @@
+@font-face{
+    font-family: 'Kaushan Script';
+    src: url(./KaushanScript-Regular.ttf) format(ttf);
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Montserrat-Regular';
+    src: url(../Montserrat-Regular.ttf) format(ttf);
+    font-weight: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@font-face{
+    font-family: 'montserat';
+    src: url(./Montserrat-Bold.ttf) format(ttf);
+    font-weight: bold;
+}
