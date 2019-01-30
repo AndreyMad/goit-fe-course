@@ -201,12 +201,15 @@ section span{
     border-radius: 4px 4px;
     margin-top: 20px;
     font-size: 16px;
+    border-style: none;
 }
 .button p{
     font-size: 16px;
     color: white;
     text-align: center;
     line-height: 51px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 .button:hover{
     cursor: pointer;

@@ -78,7 +78,6 @@ h3{
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 0px auto;
 }
 h3:after{
     content: "";
@@ -152,7 +151,6 @@ h4{
 .team{
     width: 1200px;
     height: 625px;
-    background-color: green;
     margin-top: 95px;
     display: flex;
     justify-content: space-between;
@@ -160,22 +158,39 @@ h4{
 .peoples{
     width: 380px;
     height: 545px;
-    background-color: #95e1d3;
-    display: block;
-    position: static;
+    display: flex; 
+    flex-direction: column;
 }
 .peoples img{
     width: 380px;
-    height: 545px;
-    position: absolute;
+    height: 475px;    
+    background-color: #95e1d3;
 }
 .profession{
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-style: italic;
-    text-align: center;    
+    text-align: center;  
+    margin-top: 12px;  
 }
 .name{
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 25px;
+
+
     
+}
+.team::after{
+    border: solid 1px #e5e5e5;
+    margin-top: 10px;
+    content: "";
+    bottom: 0px;
+    width: 1200px;
+    display: flex;
+    position: absolute;
 }
