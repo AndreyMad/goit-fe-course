@@ -9,6 +9,7 @@
     font-weight: normal;
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300i,400,700');
 @font-face{
     font-family: 'montserat';
     src: url(./Montserrat-Bold.ttf) format(ttf);
