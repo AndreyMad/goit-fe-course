@@ -163,8 +163,9 @@ h4{
 }
 .peoples img{
     width: 380px;
-    height: 475px;    
-    background-color: #95e1d3;
+    height: 475px;   
+    transform: translate(0, 0);
+    transition: transform 0.5s ease-in;
 }
 .profession{
     font-size: 15px;
@@ -193,4 +194,97 @@ h4{
     width: 1200px;
     display: flex;
     position: absolute;
+}
+.outwrapper{
+    width: 380px;
+    height: 475px;
+    background-color: #95e1d3;
+}
+
+.wrapper{
+    position: absolute;
+    width: 380px;
+    height: 475px;
+    background: linear-gradient(to bottom, rgba(238,137,138,0.9), rgba(237,214,134,0.9) );
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translate(0, 0);
+    transition: transform 0.5s ease-in;
+}
+.icons-2{
+    background-color: #fce38a;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    margin-right: 1px;
+    justify-content: center;
+    
+}
+.icons-2 svg{
+    fill: #f38181;
+
+}
+.icons-2:last-of-type{
+    margin-right: 0px;
+}
+.icons-2:hover{
+    background-color: #95e1d3;
+    cursor: pointer;
+}
+.outwrapper:hover .wrapper,
+.outwrapper:hover img 
+{   
+    transform: translate(-10px, -10px);
+    transition-duration: 200ms;
+
+}
+.outwrapper:hover .wrapper{
+    transform: z-index 200ms ease-in-out,
+    opacity 200ms ease-in-out;
+    z-index: 1;
+    opacity: 1;
+}
+footer{
+    height: 65px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+}
+footer p, footer span
+{
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+
+}
+footer span{
+    color: #f38181;
+}
+input:first-of-type{
+    height: 40px;
+    width: 230px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+.subscribe{
+    width: 150px;
+    background-color: #95e1d3;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    color: #fff;
+    border-style: none;
+    height: 40px;
+
+}
+form{
+    height: 40px;
+    width: 380px;
+    display: flex;
+    align-items: center;
 }
