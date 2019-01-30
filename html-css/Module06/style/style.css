@@ -265,13 +265,14 @@ footer span{
     color: #f38181;
 }
 input:first-of-type{
-    height: 40px;
+    height: 38px;
     width: 230px;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
+    border-width: 1px;
 }
-.subscribe{
+.Subscribe{
     width: 150px;
     background-color: #95e1d3;
     font-size: 14px;
