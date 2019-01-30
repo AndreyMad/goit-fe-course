@@ -199,6 +199,7 @@ h4{
     width: 380px;
     height: 475px;
     background-color: #95e1d3;
+    position: absolute;
 }
 
 .wrapper{
