@@ -67,12 +67,12 @@
             <h3>Proin laculis purus consequat sem cure.</h3>
             <form action="#" class="boxform">
                 <div class="boxout">    
-                    <input type="text" class="small_box" placeholder="Your Name *">
-                    <input type="email" class="small_box" placeholder="Your e-mail *">
-                    <input type="text" class="small_box" placeholder="subject *">
-                    <textarea name="" class="large_box" id="" cols="30" rows="10" placeholder="your message *"></textarea>
+                    <input required type="text" name="user_name" class="small_box user_name" placeholder="Your Name *">
+                    <input required type="email" name="user_email" class="small_box user_email" placeholder="Your e-mail *">
+                    <input type="text" name="subject" class="small_box subject" placeholder="subject">
+                    <textarea name="user_message" class="large_box user_message" title="Min 30 symbol" minlength="30" id="" placeholder="your message *"></textarea>
                 </div>
-                    <input type="submit" class="submit" value="send message">
+                    <input required type="submit" class="submit" value="send message">
             </form>
         </section>
     </main>

@@ -159,6 +159,7 @@ h3{
     font-weight: bold;
     padding: 20px ;
     color: #bbbbbb;
+    resize: none;
 }
 .boxout{
     width: 940px;
@@ -168,4 +169,17 @@ h3{
     margin: 0px auto;
     flex-direction: column;
     justify-content: space-between;
+}
+.user_name:not(:placeholder-shown):valid,
+.user_email:not(:placeholder-shown):valid,
+.user_message:not(:placeholder-shown):valid
+{
+    outline-style: solid;
+    outline-color: rgb(9, 255, 0);
+}
+.user_name:focus:invalid,
+.user_email:not(:placeholder-shown):invalid,
+.user_message:focus:invalid{
+    outline-style: solid;
+    outline-color: rgb(255, 0, 0);
 }
