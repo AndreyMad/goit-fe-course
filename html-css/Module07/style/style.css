@@ -1,0 +1,171 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0px;
+}
+header, .contact, .out_wrapper, .services
+{
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo{
+    font-size: 24px;
+    font-family: 'Wisdom Script';
+    text-decoration: none;
+    color: #ffeaa1;
+}
+header{
+    height: 65px;
+    margin: 50px auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.navigation a{
+    font-size: 14px;
+    font-family: 'Montserat', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: #222222;
+}
+.navigation{
+    width: 485px;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation a:hover{
+    color: #ffeaa1;
+}
+.services{
+    height: 370px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.out_wrapper{
+    height: 230px;
+    display: flex;
+    justify-content: space-around;
+
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 72px;
+}
+h3{
+    font-size: 16px;
+    font-family: 'Droid';
+    font-style: italic;
+    margin-bottom: 52px;
+    justify-content: space-around;
+}
+.wrapper_serv{
+    width: 260px;
+    height: 128px;
+    display: block;
+
+}
+.icon{
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    border: solid 2px #ffeaa1;
+    margin: 20px auto;  
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.wrapper_serv h4{
+    font-size: 18px;
+    font-family: 'Montserat', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.wrapper_serv span{
+    width: 100%;
+    font-family: 'Roboto-Slab', serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+}
+.icon svg{
+    line-height: 72px;
+}
+.contact{
+    background-color: #222222;
+    height: 677px;
+    text-align: center;
+    background-image: url(../img/Map\ Image.png);
+    background-repeat: no-repeat;
+    background-position: right 0px bottom 10px;
+    margin-top: 100px;
+}
+.contact h3{
+    color: #777777;
+    margin-bottom: 77px;
+}
+.contact h2{
+    color: #ffffff;
+    padding-top: 85px;
+    line-height: 78px;
+
+}
+.small_box{
+    width: 455px;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Montserat';
+    font-weight: bold;
+    padding: 20px;
+    color: #bbbbbb;
+
+}
+.boxform{
+    height: 310px;
+    width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    flex-direction: column;
+    
+}
+.submit{
+    width: 240px;
+    height: 65px;
+    background-color: #fed136;
+    margin: 30px auto 0px;
+    font-size: 18px;
+    font-family: 'Montserat';
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.large_box{
+    width: 455px;
+    height: 210px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Montserat';
+    font-weight: bold;
+    padding: 20px ;
+    color: #bbbbbb;
+}
+.boxout{
+    width: 940px;
+    height: 210px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    flex-direction: column;
+    justify-content: space-between;
+}

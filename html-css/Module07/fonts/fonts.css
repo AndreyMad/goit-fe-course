@@ -1,0 +1,21 @@
+@font-face{
+    font-family: 'Wisdom Script';
+    src: url(./Wisdom\ Script\ AI.woff2);
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Montserat';
+    src: url(./montserrat-v12-latin-regular.woff);
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Droid';
+    src: url(./DroidSerif-Italic.woff);
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Roboto-Slab';
+    src: url(./roboto-slab-v7-latin-regular.woff);
+    font-weight: normal;
+}
