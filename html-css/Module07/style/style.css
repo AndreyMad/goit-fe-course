@@ -127,6 +127,7 @@ h3{
     font-weight: bold;
     padding: 20px;
     color: #bbbbbb;
+    border-radius: 3px;
 
 }
 .boxform{
@@ -149,6 +150,7 @@ h3{
     color: #ffffff;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 3px;
 }
 .large_box{
     width: 455px;
@@ -160,6 +162,7 @@ h3{
     padding: 20px ;
     color: #bbbbbb;
     resize: none;
+    border-radius: 3px;
 }
 .boxout{
     width: 940px;
