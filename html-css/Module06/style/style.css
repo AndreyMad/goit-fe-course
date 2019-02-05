@@ -4,7 +4,7 @@
     font-size: 0;
 }
 .logo{
-    font-family: 'montserat', 'roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: #95e1d3;
@@ -25,7 +25,7 @@ header{
     text-decoration: none;
 }
 .headnavi li{
-    font-family: 'montserat', 'roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     font-size: 14px;
     list-style: none;
@@ -71,7 +71,7 @@ h2::first-letter{
     align-items: center;
 }
 h3{
-    font-family: 'montserat';
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
@@ -110,7 +110,7 @@ h3:after{
 }
 h4{
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;;
     font-weight: 400;
     text-transform: uppercase;
     position: absolute;
@@ -172,9 +172,9 @@ h4{
 }
 .name{
     font-size: 14px;
-    font-family: 'Montserrat-Regular';
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 400;
     text-align: center;
     margin-top: 25px;
 
