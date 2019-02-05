@@ -1,7 +1,4 @@
-@font-face{
-    font-family: 'Kaushan Script';
-    src: url(./KaushanScript-Regular.ttf) format(ttf);
-    font-weight: normal;
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 }
 @font-face{
     font-family: 'Montserrat-Regular';

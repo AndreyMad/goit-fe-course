@@ -35,9 +35,7 @@ header{
     display: flex;
     justify-content: space-between;
     width: 490px;
-    color: #95e1d3;
-    
-    
+    color: #95e1d3;   
 }
 .navigation li:hover{
     color: #f38181;
@@ -56,7 +54,7 @@ header{
 }
 
 h2{
-    font-family: 'Kaushan Script', serif;
+    font-family: 'Kaushan Script', cursive;
     font-size: 24px;
     font-weight: 400;
 }
@@ -71,7 +69,6 @@ h2::first-letter{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    /* background-color: lightblue; */
 }
 h3{
     font-family: 'montserat';
@@ -85,9 +82,6 @@ h3:after{
     width: 60px;
     display: flex;
     margin: 40px auto 0px;
-    /* position: absolute; */
-    
-
 }
 .container .services{
     height: 80px;
