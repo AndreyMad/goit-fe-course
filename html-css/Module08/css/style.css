@@ -1,0 +1,56 @@
+*, :after, :before{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+.logo{
+    font-size: 20px;
+    font-family: 'Montserat';
+    font-weight: bold;
+    order: 2;
+    margin: 100px auto 0px;
+    z-index: 1;
+}
+.user_login a{
+    font-family: 'Montserat';
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+.user_login li{
+    width: 92px;
+    height: 36px;
+    border: solid 2px red;
+    border-radius: 36px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.user_login{
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+section{
+    height: 540px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+main img{
+    position: absolute;
+    object-fit: cover;
+    left: calc(-720px+50%);

@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'Montserat';
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+@font-face{
+    font-family: 'Montserat';
+    src: url(../fonts/montserrat-v12-latin-regular.woff);
+    font-weight: normal;
+}
