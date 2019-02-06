@@ -57,6 +57,7 @@ h2{
     font-family: 'Kaushan Script', cursive;
     font-size: 24px;
     font-weight: 400;
+    margin: 0px auto;
 }
 h2::first-letter{
     text-transform: uppercase;
@@ -75,6 +76,7 @@ h3{
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
+    margin: 0px auto;
 }
 h3:after{
     content: "";
@@ -125,10 +127,7 @@ h4{
     
 }
 .ourteam{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    text-align: center;
     width: 1200px;
     height: 920px;
     margin: 90px auto 0px;
@@ -140,7 +139,7 @@ h4{
     font-weight: 400;
     width: 950px;
     text-align: center;
-    margin-top: 50px;
+    margin: 50px auto 0px;
 }
 .team{
     width: 1200px;
@@ -261,8 +260,12 @@ footer p, footer span
     font-family: "Montserrat", sans-serif;
 
 }
-footer span{
+footer a{
     color: #f38181;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
 }
 input:first-of-type{
     height: 38px;
@@ -271,6 +274,7 @@ input:first-of-type{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     border-width: 1px;
+    padding-left: 12px;
 }
 .Subscribe{
     width: 150px;
@@ -281,6 +285,7 @@ input:first-of-type{
     color: #fff;
     border-style: none;
     height: 40px;
+    cursor: pointer;
 
 }
 form{
