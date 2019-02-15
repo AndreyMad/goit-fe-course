@@ -153,6 +153,7 @@ h3{
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 3px;
+    border: none;
 }
 .large_box{
     width: 455px;
