@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-size: 0px;
 }
-header, .contact, .out_wrapper, .services
+header, .out_wrapper, .services
 {
     width: 100%;
     max-width: 1400px;
@@ -103,6 +103,7 @@ h3{
 .contact{
     background-color: #222222;
     height: 677px;
+    max-width: 100vw;
     text-align: center;
     background-image: url(../img/Map\ Image.png);
     background-repeat: no-repeat;
@@ -164,6 +165,7 @@ h3{
     color: #bbbbbb;
     resize: none;
     border-radius: 3px;
+
 }
 .boxout{
     width: 940px;
@@ -173,6 +175,7 @@ h3{
     margin: 0px auto;
     flex-direction: column;
     justify-content: space-between;
+    align-content: space-between;
 }
 .user_name:not(:placeholder-shown):valid,
 .user_email:not(:placeholder-shown):valid,
