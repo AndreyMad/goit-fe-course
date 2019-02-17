@@ -128,6 +128,8 @@ h1{
 .card{
     border: 0px;
     margin: 20px 10px 10px;
+    align-items: baseline;
+    padding: 0px;
 
 }
 button, li:hover, .logo{
@@ -151,6 +153,22 @@ button, li:hover, .logo{
     padding: 15px;
     justify-content: center;
 }
+.see_other{
+    height: 40px;
+    margin: 40px auto 60px;
+    max-width: 280px;
+    height: 40px;
+    margin: 15px auto 0px;
+    font-size: 14px;
+    font-family: 'Montserat', sans-serif;
+    font-weight: bold;
+    color: #ff4e50;
+    background-color: #ffffff;
+    border: solid 2px #ff4e50;
+    border-radius: 40px;
+    margin-bottom: 50px;
+
+}
 @media (min-width: 768px){
     .find_part h1{
         font-size: 52px;
@@ -172,11 +190,14 @@ button, li:hover, .logo{
         width: 100%;
         height: 700px;
     }
+    .see_other{
+        max-width: 190px;
+    }
 }    
     
 @media (min-width: 1170px){
         .partners{
-            max-width: 940px;
+            max-width: 1100px;
             margin: 0px auto;
         }
         .see_other{
@@ -186,13 +207,16 @@ button, li:hover, .logo{
         }
         .card{
             border: 0px;
-            margin: 20px 0px 10px;
+            margin: 20px 20px 10px 0px;
+            max-width: 220px;
+        }
+        .card:last-of-type{
+            margin-right: 0px;
         }
         .wrapper_out{
             background-image: url(../img/background-desktop.jpg);
-        }
+       }
 }
-
 
 
 
