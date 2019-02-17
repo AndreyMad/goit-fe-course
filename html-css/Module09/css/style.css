@@ -193,6 +193,9 @@ button, li:hover, .logo{
     .see_other{
         max-width: 190px;
     }
+    .finder{
+        max-width: 230px;
+    }
 }    
     
 @media (min-width: 1170px){
