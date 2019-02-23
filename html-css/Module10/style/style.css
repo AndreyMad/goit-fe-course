@@ -1,0 +1,38 @@
+.svg{
+    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.header__icon{
+    height: 16px;
+    width: 16px;
+}
+.header, .header__nav{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    width: 100%;
+    max-width: 1260px;
+    height: 90px;
+    margin: 0px auto;
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
+.header__nav{
+    width: 52%;
+    align-items: baseline;
+}
+.header__link{
+    text-transform: uppercase;
+    font-family: 'Montserat', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: none;
+}
+.header__link{
+    object-fit: cover;
+}
