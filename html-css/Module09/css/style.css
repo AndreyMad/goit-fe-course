@@ -6,12 +6,15 @@ li{
     min-height: 36px;
     min-width: 90px;
     margin-bottom: 100px;
+    
 
 }
 
 li:hover{
     border: solid 2px #ffffff;
     border-radius: 36px;
+    margin-top: -2px;
+
 }
 a{
     text-decoration: none;
@@ -19,6 +22,9 @@ a{
     font-weight: bold;
     font-size: 14px;
     color: #ffffff;
+}
+a:focus{
+    outline: none;
 }
 .user_login{
     flex-direction: row;
