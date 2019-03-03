@@ -22,3 +22,8 @@
     src: url(../fonts/roboto-v18-latin-900.woff);
     font-weight: 900;
 }
+@font-face{
+    font-family: 'Kaushan Script';
+    src: url(../fonts/KaushanScript-Regular.woff);
+    font-weight: normal;
+}
