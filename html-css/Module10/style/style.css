@@ -77,19 +77,25 @@
     opacity: 0.9;
     text-align: center;
 }
-.main__headline{
+.main__headline, .services__headline, .team__headline{
     font-family: 'Kaushan Script', sans-serif;
+    text-align: center;
+    margin: 0px auto;
+}
+.main__headline{
+    margin: 180px auto 0px;
     font-size: 72px;
     color: #ffffff;
-    margin: 180px auto 20px;
+}
+.main__headline2, .services__headline2, .team__headline2{
+    font-size: 150px;  
+    text-transform: uppercase;
+    margin: 0px auto;  
 }
 .main__headline2{
-    font-size: 150px;
-    color: #ffffff;
-    text-transform: uppercase;
     max-width: 980px;
-    margin: 0px auto;
     line-height: 130px;
+    color: #ffffff;
 }
 .main__button{
     width: 160px;
@@ -102,4 +108,81 @@
 }
 .main__button:hover{
     cursor: pointer;
+}
+.services__headline, .services__headline2{
+    color: #000000;
+}
+.services__headline, .team__headline{
+font-size: 24px;
+margin-top: 45px;
+}
+.services__headline2, .team__headline2{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    line-height: 60px;
+}
+.services__headline2:after, .team__headline2:after{
+    content: "";
+    border: 3px solid #f38181;
+    width: 60px;
+    position: absolute;
+    display: flex;
+    bottom: -24px;
+    right: 0;
+    left: 0;
+    margin: 0px auto;
+
+}
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services__list{
+    max-width: 1200px;
+    display: flex;
+    height: 300px;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0;
+    margin: 48px 0px 0px;
+
+}
+.services__items{
+    width: calc((100% - 60px) / 3);
+    margin: 50px 10px 0px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.services__icon{
+    width: 32px;height: 32px;
+    margin: 0px 20px;
+}
+.services__headline3{
+    margin-top: 0px;
+    font-family: 'Montserat', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.services__text{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.services__wrapper{
+    width: calc(100% - 72px);
+}
+.team__about{
+    display: flex;
+    font-weight: normal;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    text-align: center;
+    max-width: 980px;
+    margin: 60px auto 0px
 }
