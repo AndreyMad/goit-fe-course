@@ -186,3 +186,52 @@ margin-top: 45px;
     max-width: 980px;
     margin: 60px auto 0px
 }
+.team__cards{
+    list-style: none;
+    display: flex;
+    width: 1200px;
+    background-color: grey;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px auto;
+}
+.team__outwrapper{
+    background-color: #95e1d3;
+    height: 470px;
+    width: 380px;
+}
+.team__photo{
+    width: 380px;
+    height: 470px;
+    size: cover;
+    transform: translate(0, 0);
+    transition: transform 0.5s ease-in;
+}
+.team__inner-wrapper{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: linear-gradient(to bottom, rgba(238,137,138,0.9), rgba(237,214,134,0.9) );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translate(-10px, -10px);
+    transition: transform 0.5s ease-in;
+
+}
+.team__members:hover .team__inner-wrapper{
+    transition: opacity 500ms ease-in-out,
+    z-index 500ms, height 500ms ease-in-out,
+    width 500ms ease-in-out;
+    transition-duration: 0.5s;
+    opacity: 1;
+    z-index: 1;
+    height: 475px;
+    width: 380px;
+
+}
+.team__members:hover .team__photo{
+    transform: translate(-10px, -10px);
+    transition-duration: 200ms;
+}
