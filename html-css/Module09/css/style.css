@@ -6,15 +6,13 @@ li{
     min-height: 36px;
     min-width: 90px;
     margin-bottom: 100px;
-    
-
+    border: solid 2px #ffffff;
+    border-radius: 36px;
+    border-color: transparent;
 }
 
 li:hover{
-    border: solid 2px #ffffff;
-    border-radius: 36px;
-    margin-top: -2px;
-
+    border-color: #ffffff;
 }
 a{
     text-decoration: none;
