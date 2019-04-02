@@ -179,7 +179,7 @@ margin-top: 45px;
 }
 .team__about{
     display: flex;
-    font-weight: normal;
+    font-weight: 400;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     text-align: center;
@@ -190,10 +190,10 @@ margin-top: 45px;
     list-style: none;
     display: flex;
     width: 1200px;
-    background-color: grey;
     justify-content: space-between;
     padding: 0px;
-    margin: 0px auto;
+    margin: 90px auto 75px;
+    position: relative;
 }
 .team__outwrapper{
     background-color: #95e1d3;
@@ -220,7 +220,7 @@ margin-top: 45px;
     transition: transform 0.5s ease-in;
 
 }
-.team__members:hover .team__inner-wrapper{
+.team__outwrapper:hover .team__inner-wrapper{
     transition: opacity 500ms ease-in-out,
     z-index 500ms, height 500ms ease-in-out,
     width 500ms ease-in-out;
@@ -231,7 +231,114 @@ margin-top: 45px;
     width: 380px;
 
 }
+.team__members{
+    width: 380px;
+    height: 550px;
+    display: flex;
+    flex-flow: column;
+
+}
 .team__members:hover .team__photo{
     transform: translate(-10px, -10px);
     transition-duration: 200ms;
+}
+.team__icon{
+    width: 55px;
+    height: 55px;
+    background-color: #fce38a;
+    margin: 0px;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+    fill: #F38181;
+ 
+}
+.team__icon:hover{
+    background-color: #f38181;
+
+}
+.team__icon:hover{
+    fill: #ffffff;
+}
+.team__svgwrapper{
+    width: 223px;
+    height: 55px;
+    justify-content: space-between;
+    display: flex;
+}
+.team__link{
+    width: 55px;
+    height: 55px;
+    target: _blank;
+}
+.footer{
+    height: 65px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+}
+.footer__designed{
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+}
+.footer__link{
+    color: #f38181;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+.footer__form{
+    height: 40px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+}
+.footer__subscribe{
+    width: 150px;
+    background-color: #95e1d3;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    color: #fff;
+    border-style: none;
+    height: 40px;
+    cursor: pointer;
+}
+#footer__subscribe{
+    height: 36px;
+    width: 230px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    border-width: 1px;
+    padding-left: 12px;
+}
+.team__profession{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;  
+    margin-top: 12px;  
+}
+.team__name{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 25px;
+}
+.team__cards:after{
+    border: solid 1px #e5e5e5;
+    margin-top: 10px;
+    content: "";
+    bottom: -75px;
+    width: 1200px;
+    display: flex;
+    position: absolute;
+    display: block;
 }
