@@ -6,10 +6,13 @@
 }
 .header__icon{
     height: 16px;
-    width: 16px;
+    width: 19px;
     position: relative;
     fill: #ffffff;
     bottom: -3px;
+}
+.main, .services{
+    margin: 0px auto;
 }
 .header__icon:hover{
     fill: #fce38a;
