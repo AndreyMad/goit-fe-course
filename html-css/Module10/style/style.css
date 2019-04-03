@@ -10,6 +10,7 @@
     position: relative;
     fill: #ffffff;
     bottom: -3px;
+    fill: #f38181;
 }
 .header__icon:hover{
     fill: #fce38a;
