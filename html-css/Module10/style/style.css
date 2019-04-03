@@ -10,7 +10,6 @@
     position: relative;
     fill: #ffffff;
     bottom: -3px;
-    fill: #f38181;
 }
 .header__icon:hover{
     fill: #fce38a;
@@ -299,6 +298,7 @@ margin-top: 45px;
     width: 380px;
 
 }
+
 .team__members{
     width: 380px;
     height: 550px;
@@ -311,7 +311,7 @@ margin-top: 45px;
             flex-flow: column;
 
 }
-.team__members:hover .team__photo{
+.team__outwrapper:hover .team__photo{
     -webkit-transform: translate(-10px, -10px);
         -ms-transform: translate(-10px, -10px);
             transform: translate(-10px, -10px);
@@ -328,14 +328,13 @@ margin-top: 45px;
     padding: 15px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    fill: #F38181;
- 
+    fill: #F38181; 
+}
+.team__link:first-of-type .team__icon{
+    padding-left: 21px;
 }
 .team__icon:hover{
     background-color: #f38181;
-
-}
-.team__icon:hover{
     fill: #ffffff;
 }
 .team__svgwrapper{
