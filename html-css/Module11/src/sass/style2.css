@@ -97,36 +97,8 @@
     font-family: 'Kaushan Script', sans-serif;
     text-align: center;
     margin: 0px auto;
-}
-.main__headline{
-    margin: 180px auto 0px;
-    font-size: 72px;
-    color: #ffffff;
-}
-.main__headline2, .services__headline2, .team__headline2{
-    font-size: 150px;  
-    text-transform: uppercase;
-    margin: 0px auto;  
-}
-.main__headline2{
-    max-width: 980px;
-    line-height: 130px;
-    color: #ffffff;
-}
-.main__button{
-    width: 160px;
-    height: 40px;
-    background: none;
-    border: solid 3px #ffffff;
-    color: #ffffff;
-    margin-top: 80px;
 
-}
-.main__button:hover{
-    cursor: pointer;
-}
-.services__headline, .services__headline2{
-    color: #000000;
+
 }
 .services__headline, .team__headline{
 font-size: 24px;
