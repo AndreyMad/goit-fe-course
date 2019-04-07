@@ -1,0 +1,31 @@
+.wrapper_image{
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    background-image: url(../img/02.jpg);
+    block-size: cover;
+    background-position: center;
+    margin: 0px auto;
+    padding-top: 156px;
+}
+.floor_shadow{
+    height: 100%;
+    width: 100%;
+    border: solid 2px green;
+    background-color: green;
+    opacity: 0.3;
+    display: none;
+
+    /* display: none;/ */
+    z-index: 1;
+}
+.floor_shadow_wrapper{
+    height: 35px;
+    width: 1030px;
+    margin: 0px auto 0px 105px;
+}
+
+
+.floor_shadow_wrapper:hover .floor_shadow{
+    display: block;
+}
