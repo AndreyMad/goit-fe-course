@@ -1,6 +1,6 @@
 .wrapper_image{
     position: relative;
-    width: 1200px;
+    width: 1210px;
     height: 600px;
     background-image: url(../img/02.jpg);
     block-size: cover;
@@ -11,21 +11,29 @@
 .floor_shadow{
     height: 100%;
     width: 100%;
-    border: solid 2px green;
-    background-color: green;
-    opacity: 0.3;
-    display: none;
+    transition: 0.2s;
+    display: block;
 
     /* display: none;/ */
     z-index: 1;
 }
 .floor_shadow_wrapper{
-    height: 35px;
-    width: 1030px;
-    margin: 0px auto 0px 105px;
+    height: 36px;
+    width: 1034px;
+    margin: 0px auto 0px 110px;
 }
 
 
-.floor_shadow_wrapper:hover .floor_shadow{
-    display: block;
+.floor_shadow:hover{
+    transition: ease-in-out 0.3s;
+    background-color: rgba(19, 242, 2, 0.4);
+
+
+}
+.section{
+    height: 360px;
+    width: 350px;
+    background-color: red;
+    opacity: 0.3
+    ;
 }
