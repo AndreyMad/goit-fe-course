@@ -19,6 +19,9 @@
     height: 36px;
     width: 100%;
 }
+.floor_shadow_wrapper:first-of-type{
+    height: 56px;
+}
 
 
 .floor_shadow:hover{
@@ -31,7 +34,7 @@
 .section_1, .section_2, .section_3{
     height: 360px;
     width: 33.3333%;
-    padding: 20px 0px 0px;
+    
     border: solid 2px transparent;
     transition: 1s;
 
