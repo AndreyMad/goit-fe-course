@@ -7,6 +7,7 @@
     background-position: center;
     margin: 0px auto;
     padding-top: 127px;
+    
 }
 .floor_shadow{
     height: 100%;
@@ -41,8 +42,7 @@
 }
 .section_1:hover, .section_2:hover, .section_3:hover{
     transition: 1s;
-    background-color: rgba(71, 175, 64, 0.15);
-    border: solid 2px darkgreen;
+    background-color: rgba(71, 175, 64, 0.3);
     border-bottom: solid 2px transparent;
 }
 
@@ -75,3 +75,9 @@
 .pseudo_title:hover{
     opacity: 0 !important;
 } 
+.outwrapper{
+    width: 1210px;
+    height: 600px;
+    background-color: #000000;
+    opacity: 0.3;
+}
