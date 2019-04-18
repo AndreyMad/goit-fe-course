@@ -1,16 +1,16 @@
                                 // Task 1 if else
 
-const ADMIN_PASSWORD = 'm4ng0h4ckz';
-let message;
-let userPassword = prompt("Enter password");
-if(userPassword.toLowerCase() === ADMIN_PASSWORD){
-    message = "Добро пожаловать";
-} else if(userPassword === null){
-    message = "Отменено пользователем!";
-} else{
-    message = "Доступ запрещен, неверный пароль!";
-}
-console.log(message);
+// const ADMIN_PASSWORD = 'm4ng0h4ckz';
+// let message;
+// let userPassword = prompt("Enter password");
+// if(userPassword === null){
+//     message = "Отменено пользователем!";
+// }else if(userPassword.toLowerCase() === ADMIN_PASSWORD){
+//     message = "Добро пожаловать";
+// } else{
+//     message = "Доступ запрещен, неверный пароль!";
+// }
+// console.log(message);
 
                                 //task 1 ternar
 
@@ -26,19 +26,19 @@ console.log(message);
 
                                 //task 2
 
-let credits = 23580,
-    pricePerDroid = 3000,
-    numberDroids = prompt("How many droids you want to buy?"),
-    totalPrice = numberDroids * 3000;
-if (totalPrice >= credits) {
-    console.log("Недостаточно средств на счету!");
-}else if (numberDroids === null) {
-    console.log("Отменено пользователем!");
-}else {
-  credits -= totalPrice;
-  console.log(
-    `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`);
-}
+// let credits = 23580,
+//     pricePerDroid = 3000,
+//     numberDroids = prompt("How many droids you want to buy?"),
+//     totalPrice = numberDroids * 3000;
+// if (totalPrice >= credits) {
+//     console.log("Недостаточно средств на счету!");
+// }else if (numberDroids === null) {
+//     console.log("Отменено пользователем!");
+// }else {
+//   credits -= totalPrice;
+//   console.log(
+//     `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`);
+// }
 
 
                                 //task 3
@@ -61,15 +61,19 @@ if(country != null){
         case "ямайка":
             price = 120;
             break;
+            
         default:
-            price = "В вашу страну доставка не осуществляется!"
+            console.log("В вашу страну доставка не осуществляется!");
         break;
+
     }
+    console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
 }
 else{
     price = "Отменено пользователем";}
+console.log(price);
 
-console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+
 
 
 
