@@ -1,4 +1,4 @@
-                                // Task 1 if else
+//                                 // Task 1 if else
 
 // const ADMIN_PASSWORD = 'm4ng0h4ckz';
 // let message;
@@ -26,53 +26,57 @@
 
                                 //task 2
 
-// let credits = 23580,
-//     pricePerDroid = 3000,
-//     numberDroids = prompt("How many droids you want to buy?"),
-//     totalPrice = numberDroids * 3000;
-// if (totalPrice >= credits) {
-//     console.log("Недостаточно средств на счету!");
-// }else if (numberDroids === null) {
-//     console.log("Отменено пользователем!");
-// }else {
-//   credits -= totalPrice;
-//   console.log(
-//     `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`);
-// }
+let credits = 23580,
+    pricePerDroid = 3000,
+    numberDroids = prompt("How many droids you want to buy?");
+    numberDroids = numberDroids;
+let totalPrice = Math.floor(numberDroids) * 3000;
+if (totalPrice >= credits) {
+    console.log("Недостаточно средств на счету!");
+}else if (numberDroids === null) {
+    console.log("Отменено пользователем!");
+}else {
+  credits -= totalPrice;
+  console.log(
+    `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`);
+}
+
+
 
 
                                 //task 3
-let country = prompt("Укажите страну доставки:");
-let price;
-if(country != null){
-    switch(country){
-        case "китай":
-            price = 100;
-            break;
-        case "южная америка":
-            price = 250;
-            break;
-        case "австралия":
-            price = 170;
-            break;
-        case "индия":
-            price = 80;
-            break;
-        case "ямайка":
-            price = 120;
-            break;
-            
-        default:
-            console.log("В вашу страну доставка не осуществляется!");
-        break;
-
-    }
-    console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
-}
-else{
-    price = "Отменено пользователем";}
-console.log(price);
-
+// let country = prompt("Укажите страну доставки:");
+// let price;
+// if(country != null){
+//     switch(country){
+//         case "китай":
+//             price = 100;
+//             break;
+//         case "южная америка":
+//             price = 250;
+//             break;
+//         case "австралия":
+//             price = 170;
+//             break;
+//         case "индия":
+//             price = 80;
+//             break;
+//         case "ямайка":
+//             price = 120;
+//             break;
+//         default:
+//             price = undefined;
+//         break;
+//     }if(price === undefined){
+//         console.log("Доставка в вашу страну не осуществляется!");
+//     }else{
+//     console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+// }}
+// else
+// {
+//     price = "Отменено пользователем";
+//     console.log(price);
+// }
 
 
 
