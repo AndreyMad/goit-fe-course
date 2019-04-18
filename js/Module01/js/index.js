@@ -1,18 +1,18 @@
 //                                 // Task 1 if else
 
-// const ADMIN_PASSWORD = 'm4ng0h4ckz';
-// let message;
-// let userPassword = prompt("Enter password");
-// if(userPassword === null){
-//     message = "Отменено пользователем!";
-// }else if(userPassword.toLowerCase() === ADMIN_PASSWORD){
-//     message = "Добро пожаловать";
-// } else{
-//     message = "Доступ запрещен, неверный пароль!";
-// }
-// console.log(message);
+const ADMIN_PASSWORD = "m4ng0h4ckz";
+let message;
+let userPassword = prompt("Enter password");
+if (userPassword === null) {
+  message = "Отменено пользователем!";
+} else if (userPassword.toLowerCase() === ADMIN_PASSWORD) {
+  message = "Добро пожаловать";
+} else {
+  message = "Доступ запрещен, неверный пароль!";
+}
+console.log(message);
 
-                                //task 1 ternar
+//task 1 ternar
 
 // const ADMIN_PASSWORD = 'm4ng0h4ckz';
 // let message;
@@ -21,96 +21,54 @@
 // message = userPassword.toLowerCase() === ADMIN_PASSWORD ? "Добро пожаловать" : userPassword === null ? "Отменено пользователем!" : "Доступ запрещен, неверный пароль!";
 // console.log(message);
 
-        
-
-
-                                //task 2
+//task 2
 
 let credits = 23580,
-    pricePerDroid = 3000,
-    numberDroids = prompt("How many droids you want to buy?");
-    numberDroids = numberDroids;
+  pricePerDroid = 3000,
+  numberDroids = prompt("How many droids you want to buy?");
+numberDroids = numberDroids;
 let totalPrice = Math.floor(numberDroids) * 3000;
 if (totalPrice >= credits) {
-    console.log("Недостаточно средств на счету!");
-}else if (numberDroids === null) {
-    console.log("Отменено пользователем!");
-}else {
+  console.log("Недостаточно средств на счету!");
+} else if (numberDroids === null) {
+  console.log("Отменено пользователем!");
+} else {
   credits -= totalPrice;
   console.log(
-    `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`);
+    `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`
+  );
 }
 
-
-
-
-                                //task 3
-// let country = prompt("Укажите страну доставки:");
-// let price;
-// if(country != null){
-//     switch(country){
-//         case "китай":
-//             price = 100;
-//             break;
-//         case "южная америка":
-//             price = 250;
-//             break;
-//         case "австралия":
-//             price = 170;
-//             break;
-//         case "индия":
-//             price = 80;
-//             break;
-//         case "ямайка":
-//             price = 120;
-//             break;
-//         default:
-//             price = undefined;
-//         break;
-//     }if(price === undefined){
-//         console.log("Доставка в вашу страну не осуществляется!");
-//     }else{
-//     console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
-// }}
-// else
-// {
-//     price = "Отменено пользователем";
-//     console.log(price);
-// }
-
-
-
-
-
-
-
-
-// console.log(country);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const userNumber = prompt('Enter your number:');
-// let title = null;
-// if (Number(userNumber) === 1){
-//     title = 'Error';
-// } else if(Number(userNumber) === 2){
-//     title = 'Hello user';
-// } else if(Number(userNumber) === 3){
-//     title = 'Great';
-
-// } else{
-//     console.log('Enter right NUMBER!!!!!');
-// }
-// console.log("TCL: title", title)
+//task 3
+let country = prompt("Укажите страну доставки:");
+let price;
+if (country != null) {
+  switch (country) {
+    case "китай":
+      price = 100;
+      break;
+    case "южная америка":
+      price = 250;
+      break;
+    case "австралия":
+      price = 170;
+      break;
+    case "индия":
+      price = 80;
+      break;
+    case "ямайка":
+      price = 120;
+      break;
+    default:
+      price = undefined;
+      break;
+  }
+  if (price === undefined) {
+    console.log("Доставка в вашу страну не осуществляется!");
+  } else {
+    console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+  }
+} else {
+  price = "Отменено пользователем";
+  console.log(price);
+}
