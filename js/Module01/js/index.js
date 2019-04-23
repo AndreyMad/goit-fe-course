@@ -1,16 +1,16 @@
 //                                 // Task 1 if else
 
-const ADMIN_PASSWORD = "m4ng0h4ckz";
-let message;
-let userPassword = prompt("Enter password");
-if (userPassword === null) {
-  message = "Отменено пользователем!";
-} else if (userPassword.toLowerCase() === ADMIN_PASSWORD) {
-  message = "Добро пожаловать";
-} else {
-  message = "Доступ запрещен, неверный пароль!";
-}
-console.log(message);
+// const ADMIN_PASSWORD = "m4ng0h4ckz";
+// let message;
+// let userPassword = prompt("Enter password");
+// if (userPassword === null) {
+//   message = "Отменено пользователем!";
+// } else if (userPassword === ADMIN_PASSWORD) {
+//   message = "Добро пожаловать";
+// } else {
+//   message = "Доступ запрещен, неверный пароль!";
+// }
+// console.log(message);
 
 //task 1 ternar
 
@@ -23,52 +23,49 @@ console.log(message);
 
 //task 2
 
-let credits = 23580,
-  pricePerDroid = 3000,
-  numberDroids = prompt("How many droids you want to buy?");
-numberDroids = numberDroids;
-let totalPrice = Math.floor(numberDroids) * 3000;
-if (totalPrice >= credits) {
-  console.log("Недостаточно средств на счету!");
-} else if (numberDroids === null) {
-  console.log("Отменено пользователем!");
-} else {
-  credits -= totalPrice;
-  console.log(
-    `Вы купили ${numberDroids} дроидов, на счету осталось ${credits} кредитов.`
-  );
-}
+// let credits = 23580,
+//   pricePerDroid = 3000,
+//   numberDroids = prompt("How many droids you want to buy?");
+// let totalPrice = numberDroids * 3000;
+// if (numberDroids === null) {
+//   console.log("Отменено пользователем!");
+// }else if (totalPrice > credits) {
+//   console.log("Недостаточно средств на счету!");
+// } else {
+//   console.log(
+//     `Вы купили ${numberDroids} дроидов, на счету осталось ${credits -= totalPrice} кредитов.`
+//   );
+// }
 
 //task 3
-let country = prompt("Укажите страну доставки:");
-let price;
-if (country != null) {
-  switch (country) {
+const costChina = 100;
+const costSouthAmerica = 250;
+const costAustralia = 170;
+const costIndia = 80;
+const costJamaica = 120;
+
+let userCountry = prompt("Enter delivery country");
+
+if (userCountry === null) {
+  alert("Отменено пользователем!");
+} else {
+  switch (userCountry.toLowerCase()) {
     case "китай":
-      price = 100;
+      alert(`Доставка в ${userCountry} будет стоить ${costChina} кредитов`);
       break;
     case "южная америка":
-      price = 250;
+      alert(`Доставка в ${userCountry} будет стоить ${costSouthAmerica} кредитов`);
       break;
     case "австралия":
-      price = 170;
+      alert(`Доставка в ${userCountry} будет стоить ${costAustralia} кредитов`);
       break;
     case "индия":
-      price = 80;
+      alert(`Доставка в ${userCountry} будет стоить ${costIndia} кредитов`);
       break;
     case "ямайка":
-      price = 120;
+      alert(`Доставка в ${userCountry} будет стоить ${costJamaica} кредитов`);
       break;
     default:
-      price = undefined;
-      break;
+      alert("В вашей стране доставка не доступна");
   }
-  if (price === undefined) {
-    console.log("Доставка в вашу страну не осуществляется!");
-  } else {
-    console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
-  }
-} else {
-  price = "Отменено пользователем";
-  console.log(price);
 }
