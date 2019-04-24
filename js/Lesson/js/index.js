@@ -171,3 +171,19 @@
 
 // numbers.includes(+value) ? message = "Поздравляем, Вы угадали!" : message = "Сожалеем, Вы не угадали!";
 // alert(message);
+
+
+// 23.04.2019
+
+
+
+// let arrOfNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
+// // for (let i = 0; i < arrOfNumbers.length; i++){
+// //     console.log(arrOfNumbers[i]);
+// // }
+// for(let element = 0, max = arrOfNumbers.length; element < max; element +=1){
+//     // if(arrOfNumbers[element] %2 !== 0){
+//     //     continue;
+//     // }
+//     console.log(arrOfNumbers[element] %4, arrOfNumbers[element] );
+// }

@@ -1,41 +1,34 @@
 //                                 // Task 1 if else
 
-// const ADMIN_PASSWORD = "m4ng0h4ckz";
-// let message;
-// let userPassword = prompt("Enter password");
-// if (userPassword === null) {
-//   message = "Отменено пользователем!";
-// } else if (userPassword === ADMIN_PASSWORD) {
-//   message = "Добро пожаловать";
-// } else {
-//   message = "Доступ запрещен, неверный пароль!";
-// }
-// console.log(message);
+const ADMIN_PASSWORD = "m4ng0h4ckz";
+let message;
+let userPassword = prompt("Enter password");
+if (userPassword === null) {
+  message = "Отменено пользователем!";
+} else if (userPassword === ADMIN_PASSWORD) {
+  message = "Добро пожаловать";
+} else {
+  message = "Доступ запрещен, неверный пароль!";
+}
+console.log(message);
 
-//task 1 ternar
 
-// const ADMIN_PASSWORD = 'm4ng0h4ckz';
-// let message;
-// let userPassword = prompt("Enter password");
-
-// message = userPassword.toLowerCase() === ADMIN_PASSWORD ? "Добро пожаловать" : userPassword === null ? "Отменено пользователем!" : "Доступ запрещен, неверный пароль!";
-// console.log(message);
 
 //task 2
 
-// let credits = 23580,
-//   pricePerDroid = 3000,
-//   numberDroids = prompt("How many droids you want to buy?");
-// let totalPrice = numberDroids * 3000;
-// if (numberDroids === null) {
-//   console.log("Отменено пользователем!");
-// }else if (totalPrice > credits) {
-//   console.log("Недостаточно средств на счету!");
-// } else {
-//   console.log(
-//     `Вы купили ${numberDroids} дроидов, на счету осталось ${credits -= totalPrice} кредитов.`
-//   );
-// }
+let credits = 23580,
+  pricePerDroid = 3000,
+  numberDroids = prompt("How many droids you want to buy?");
+let totalPrice = numberDroids * 3000;
+if (numberDroids === null) {
+  console.log("Отменено пользователем!");
+}else if (totalPrice > credits) {
+  console.log("Недостаточно средств на счету!");
+} else {
+  console.log(
+    `Вы купили ${numberDroids} дроидов, на счету осталось ${credits -= totalPrice} кредитов.`
+  );
+}
 
 //task 3
 const costChina = 100;
