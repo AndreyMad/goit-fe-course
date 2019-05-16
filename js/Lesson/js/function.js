@@ -16,19 +16,22 @@
 
 
 
-let years = [];
-for(let year = prompt("Enter year"); year < 2019; year +=1){
-    if(typeof(year) !== 'number'){
-        console.log("Not a number");
-        break;
-    }
-    if(year % 4 ===0){
-        years.push(year);
-    }
+// let years = [];
+// for(let year = prompt("Enter year"); year < 2019; year +=1){
+//     if(typeof(year) !== 'number'){
+//         console.log("Not a number");
+//         break;
+//     }
+//     if(year % 4 ===0){
+//         years.push(year);
+//     }
 
-}
-console.log(years);
+// }
+// console.log(years);
 
 // function newFunction() {
 //     return typeof ;
 // }
+
+
+
