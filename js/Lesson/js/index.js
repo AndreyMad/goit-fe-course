@@ -387,39 +387,39 @@
 //     }
 // };
 // tank.move(2,4);
+// // tank.shoot()
+// // console.log(tank);
+
+// let tank ={
+//     life: 100,
+//     armor: 100,
+//     speed: 30,
+//     amunition: 10,
+//     isEngineBroke: false,
+//     x: 50,
+//     y: 50,
+//     move: function(newX, newY){
+//         if(tank.canTankMove()){
+//         this.x = this.x + newX;
+//         this.y = newY;
+//     }else{alert('Engine broke');
+// }
+//     },
+//     shoot(){
+//         if(this.canFire()){
+//         this.amunition -=1 ;
+//         }else{alert("cant fire")}
+//     },
+//     canTankMove(){
+//         return !this.isEngineBroke;
+//     },
+//     canFire(){
+//         return this.amunition>0;
+//     }
+// };
+// tank.move(2,4);
 // tank.shoot()
 // console.log(tank);
-
-let tank ={
-    life: 100,
-    armor: 100,
-    speed: 30,
-    amunition: 10,
-    isEngineBroke: false,
-    x: 50,
-    y: 50,
-    move: function(newX, newY){
-        if(tank.canTankMove()){
-        this.x = this.x + newX;
-        this.y = newY;
-    }else{alert('Engine broke');
-}
-    },
-    shoot(){
-        if(this.canFire()){
-        this.amunition -=1 ;
-        }else{alert("cant fire")}
-    },
-    canTankMove(){
-        return !this.isEngineBroke;
-    },
-    canFire(){
-        return this.amunition>0;
-    }
-};
-tank.move(2,4);
-tank.shoot()
-console.log(tank);
 
 
 
