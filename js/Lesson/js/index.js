@@ -59,11 +59,11 @@
 // users.push("Jay", "Kiwi")
 // console.log(users); //  ["Lux", "Poly", "Ajax", "Jay", "Kiwi"]
 
-// // Удалить из массива элемент хранящийся в переменной userToDelete
+// Удалить из массива элемент хранящийся в переменной userToDelete
 // const userToDelete = "Ajax";
 // const indexFind = users.indexOf(userToDelete);
 // users.splice(indexFind, 1)
-// console.log(users); //  ["Lux", "Poly", "Jay", "Kiwi"]
+// console.log(users);  // ["Lux", "Poly", "Jay", "Kiwi"]
 
 // // Добавить в массив пользователя "Kong", перед пользователем хранящейся в переменной userToInsertBefore
 // const userToInsertBefore = "Jay";
@@ -159,9 +159,9 @@
 // 23.04.2019
 
 // let arrOfNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
-// // for (let i = 0; i < arrOfNumbers.length; i++){
-// //     console.log(arrOfNumbers[i]);
-// // }
+//  for (let i = 0; i < arrOfNumbers.length; i++){
+//      console.log(arrOfNumbers[i]);
+//  }
 // for(let element = 0, max = arrOfNumbers.length; element < max; element +=1){
 //     // if(arrOfNumbers[element] %2 !== 0){
 //     //     continue;
