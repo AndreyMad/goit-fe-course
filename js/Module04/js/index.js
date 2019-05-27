@@ -1,15 +1,4 @@
-//Создай объект notepad для работы с массивом заметок. Каждая заметка это объект следующего формата:
-
-// const id: string | integer;
-// const title: string;
-// const body: string;
-// const priority: integer [0-2];
-//id - уникальный идентификатор объекта, чтобы можно было найти его в коллекции, строка.
-// //title - заголовок заметки, строка.
-// body - текст заметки, строка.
-// priority - значение приоритета, от 0 (низкий) до 2 (высокий).
-// Вот карта приоритетов, используй ее.
-
+'use strict'
 const Priority = {
   LOW: 0,
   NORMAL: 1,
@@ -37,11 +26,22 @@ const notepad = {
     this.notes.splice(indexToDelete, 1);
   },
   updateNoteContent(id, updatedContent) {
-    for(let element of this.notes){
-      if(id === element.id){
+  //   let newEl = this.findNoteById(id);
+  //   newEl.title = updatedContent.title;
+  //   let index = this.notes.indexOf(this.findNoteById(id))
+  //   let newArr = (...notes, newEl);
+  //  console.log(newEl);
 
-      }
-    }
+   
+   // Object.assign(this.notes[this.notes.findNoteById(id), updatedContent])
+  //  return newNote;
+    
+    
+    // for(let element of this.notes){
+    //   if(id === element.id){
+        
+    //   }
+    // }
 
   /*
    * Обновляет контент заметки
@@ -159,7 +159,10 @@ console.log(
 // notepad.updateNoteContent('id-3', {
 //   title: 'Get comfy with React.js or Vue.js',
 // });
-
+notepad.updateNoteContent('id-3', {
+  title: 'asdadasdasdasd',
+});
+console.log("Все текущие заметки: ", notepad.getNotes());
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
 //   notepad.getNotes(),
