@@ -26,11 +26,33 @@ const notepad = {
     this.notes.splice(indexToDelete, 1);
   },
 
+
+
+
+
+
+
+
+
+
+
   updateNoteContent(id, updatedContent) {
-    const updatedNote = {...this.findNoteById(id), ...updatedContent};
-    this.notes[this.notes.indexOf(this.findNoteById(id))] = updatedNote;
-    return updatedNote;
-  },
+    // const updatedNote = {...this.findNoteById(id), ...updatedContent};
+    // this.notes[this.notes.indexOf(this.findNoteById(id))] = updatedNote;
+    const newel ={...this.notes[this.notes.indexOf(this.findNoteById(id))], ...updatedContent};
+    return  newel;
+
+  //const {title, body} = this.findNoteById(id);
+},
+
+
+
+
+
+
+
+
+
 
   updateNotePriority(id, priority) {
     this.findNoteById(id).priority = priority;
@@ -89,7 +111,7 @@ notepad.saveNote({
   priority: Priority.LOW
 });
 
-//console.log("Все текущие заметки: ", notepad.getNotes());
+console.log("Все текущие заметки: ", notepad.getNotes());
 
 // notepad.updateNotePriority('id-4', Priority.NORMAL); 
 // console.log(
@@ -120,7 +142,7 @@ notepad.saveNote({
 // );
 
 notepad.updateNoteContent('id-4', {
-  id: 'asdasdasdasdasdasdasdasd',
+  title: 'asdasdasdasdasdasdasdasd',
 });
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
