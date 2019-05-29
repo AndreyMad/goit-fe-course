@@ -25,17 +25,27 @@ const notepad = {
     let indexToDelete = this.notes.indexOf(this.findNoteById(id));
     this.notes.splice(indexToDelete, 1);
   },
+
+
+
+
+
   updateNoteContent(id, updatedContent) {
     this.findNoteById(id).title = updatedContent.title;
   },
+  
+  
+  
+  
+  
   updateNotePriority(id, priority) {
-    for (let element of this.notes) {
-      if (id === element.id) {
-        element.priority = priority;
-      }
-    }
+    this.findNoteById(id).priority = priority;
   },
 
+  
+  
+  
+  
   filterNotesByQuery(query) {
     let newNote = [];
     for (let element of this.notes) {
@@ -95,14 +105,13 @@ notepad.saveNote({
 
 console.log("Все текущие заметки: ", notepad.getNotes());
 
-// notepad.updateNotePriority('id-4', Priority.NORMAL);
-
+// notepad.updateNotePriority('id-4', Priority.NORMAL); 
 // console.log(
 //   'Заметки после обновления приоритета для id-4: ',
 //   notepad.getNotes(),
 // );
 
-// notepad.updateNotePriority('id-3', Priority.LOW);
+//notepad.updateNotePriority('id-3', Priority.LOW);
 
 // console.log(
 //   'Заметки после обновления приоритета для id-3: ',
@@ -124,9 +133,9 @@ console.log("Все текущие заметки: ", notepad.getNotes());
 //   notepad.filterNotesByPriority(Priority.NORMAL)
 // );
 
-// notepad.updateNoteContent('id-3', {
-//   title: 'Get comfy with React.js or Vue.js',
-// });
+notepad.updateNoteContent('id-4', {
+  title: 'asdasdasdasdasdasdasdasd',
+});
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
 //   notepad.getNotes(),
