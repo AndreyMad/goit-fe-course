@@ -19,35 +19,22 @@ const notepad = {
   },
   saveNote(note) {
     notepad.notes.push(note);
-    return notepad.notes;
+    return this.note;
   },
   deleteNote(id) {
     let indexToDelete = this.notes.indexOf(this.findNoteById(id));
     this.notes.splice(indexToDelete, 1);
   },
   updateNoteContent(id, updatedContent) {
-    for(let element of this.notes){
-      if(element.id === id){
-        Object.assign(element, updatedContent);
-        return element;
-      }
-    }
-   
-    
-
-    // const updatedNote = {...this.findNoteById(id), ...updatedContent};
-    // this.notes[this.notes.indexOf(this.findNoteById(id))] = updatedNote;
-    // return updatedNote;
+    let updatedNote = Object.assign(this.findNoteById(id), updatedContent);
+     return updatedNote;
   },
 
 
 
   updateNotePriority(id, priority) {
-    for (let element of this.notes) {
-      if (id === element.id) {
-        element.priority = priority;
-      }
-    }
+    this.findNoteById(id).priority = priority;
+    
   },
 
   filterNotesByQuery(query) {
@@ -107,9 +94,9 @@ notepad.saveNote({
   priority: Priority.LOW
 });
 
-console.log("Все текущие заметки: ", notepad.getNotes());
+//console.log("Все текущие заметки: ", notepad.getNotes());
 
-// notepad.updateNotePriority('id-4', Priority.NORMAL);
+//notepad.updateNotePriority('id-4', Priority.NORMAL);
 
 // console.log(
 //   'Заметки после обновления приоритета для id-4: ',
@@ -141,7 +128,7 @@ console.log("Все текущие заметки: ", notepad.getNotes());
 notepad.updateNoteContent('id-3', {
   title: 'Get comfy with React.js or Vue.js',
 });
-console.log(notepad.getNotes());
+ console.log(notepad.getNotes());
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
 //   notepad.getNotes(),
