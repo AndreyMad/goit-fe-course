@@ -17,24 +17,25 @@ const notepad = {
       }
     }
   },
+  
   saveNote(note) {
     notepad.notes.push(note);
     return this.note;
   },
+
   deleteNote(id) {
     let indexToDelete = this.notes.indexOf(this.findNoteById(id));
     this.notes.splice(indexToDelete, 1);
   },
+
   updateNoteContent(id, updatedContent) {
     let updatedNote = Object.assign(this.findNoteById(id), updatedContent);
-     return updatedNote;
+    return updatedNote;
   },
-
-
 
   updateNotePriority(id, priority) {
     this.findNoteById(id).priority = priority;
-    
+
   },
 
   filterNotesByQuery(query) {
@@ -65,32 +66,28 @@ const notepad = {
 notepad.saveNote({
   id: "id-1",
   title: "JavaScript essentials",
-  body:
-    "Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc",
+  body: "Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc",
   priority: Priority.HIGH
 });
 
 notepad.saveNote({
   id: "id-2",
   title: "Refresh HTML and CSS",
-  body:
-    "Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.",
+  body: "Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.",
   priority: Priority.NORMAL
 });
 
 notepad.saveNote({
   id: "id-3",
   title: "Get comfy with Frontend frameworks",
-  body:
-    "First must get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.",
+  body: "First must get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.",
   priority: Priority.NORMAL
 });
 
 notepad.saveNote({
   id: "id-4",
   title: "Winter clothes",
-  body:
-    "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
+  body: "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
   priority: Priority.LOW
 });
 
@@ -128,7 +125,7 @@ notepad.saveNote({
 notepad.updateNoteContent('id-3', {
   title: 'Get comfy with React.js or Vue.js',
 });
- console.log(notepad.getNotes());
+console.log(notepad.getNotes());
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
 //   notepad.getNotes(),

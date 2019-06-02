@@ -198,20 +198,20 @@
 
 // // //30.05
 
-// // function SmartPhone({size,ram, status, diagonal,color,
-// //     camera, wifi, sensorsScreen}){
-// // // this.size = size,
-// // // this.ram = ram,
-// // // this.status = status,
-// // // this. diagonal = diagonal,
-// // // this.color = color,
-// // // this.camera = camera,
-// // // Phone.call(this,{ size,diagonal, ram, status,color, camera}),
+function SmartPhone({size,ram, status, diagonal,color,
+    camera, wifi, sensorsScreen}){
+this.size = size,
+this.ram = ram,
+this.status = status,
+this. diagonal = diagonal,
+this.color = color,
+this.camera = camera,
+Phone.call(this,{ size,diagonal, ram, status,color, camera}),
 
-// // Phone.apply(this, [{size,diagonal, ram, status,color, camera}]),
-// // this.wifi = wifi,
-// // this.sensorsScreen = sensorsScreen
-// // }
+Phone.apply(this, [{size,diagonal, ram, status,color, camera}]),
+this.wifi = wifi,
+this.sensorsScreen = sensorsScreen
+}
 
 // // SmartPhone.prototype= Object.create(Phone.prototype); //наслідування методів Phone
 
