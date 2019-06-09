@@ -25,8 +25,8 @@ const Notepad  = function Notepad(notes = []){
     this.notes.splice(indexToDelete, 1);
   },
 
-  this.updateNoteContent = function(id, updatedContent) {
-    this.findNoteById(id).title = updatedContent.title;
+   this.updateNoteContent = function(id, updatedContent) {
+    Object.assign(this.findNoteById(id), updatedContent) 
   },
   
 
@@ -140,9 +140,9 @@ console.log('Все текущие заметки после добавлени�
 // );
 
 
-// notepad.updateNoteContent('id-3', {
-//   title: 'Get comfy with React.js or Vue.js',
-// });
+notepad.updateNoteContent('id-3', {
+  title: 'Get comfy with React.js or Vue.js',
+});
 
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
