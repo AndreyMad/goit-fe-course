@@ -1,41 +1,48 @@
 "use strict";
 
-const Notepad  = function Notepad(notes = []){
-  this.notes = notes,
+class Notepad{
+  constructor(notes = []){
+    this._notes = notes
+  }
 
-  this.getNotes = function() {
-    return this.notes;
-  },
+  static Priority={
+    LOW: 0,
+    NORMAL: 1,
+    HIGH: 2
+  }
+  get notes(){
+    return this._notes;
+  }
 
-  this.findNoteById = function(id) {
+  findNoteById = function(id) {
     for (let element of notepad.notes) {
       if (id === element.id) {
         return element;
       }
     }
-  },
+  }
 
-  this.saveNote = function(note) {
+ saveNote = function(note) {
     notepad.notes.push(note);
     return note;
-  },
+  }
 
-  this.deleteNote = function(id) {
+  deleteNote = function(id) {
     let indexToDelete = this.notes.indexOf(this.findNoteById(id));
     this.notes.splice(indexToDelete, 1);
-  },
+  }
 
-   this.updateNoteContent = function(id, updatedContent) {
+   updateNoteContent = function(id, updatedContent) {
     Object.assign(this.findNoteById(id), updatedContent) 
-  },
+  }
   
 
-  this.updateNotePriority= function(id, priority) {
+  updateNotePriority= function(id, priority) {
     this.findNoteById(id).priority = priority;
-  },
+  }
 
 
-  this.filterNotesByQuery= function(query) {
+  filterNotesByQuery= function(query) {
     let newNote = [];
     for (let element of this.notes) {
       if (
@@ -46,9 +53,9 @@ const Notepad  = function Notepad(notes = []){
       }
     }
     return newNote;
-  },
+  }
 
-  this.filterNotesByPriority= function(priority) {
+  filterNotesByPriority= function(priority) {
     let newArr = [];
     for (let element of this.notes) {
       if (priority === element.priority) {
@@ -57,13 +64,12 @@ const Notepad  = function Notepad(notes = []){
     }
     return newArr;
   }
-  
-};
-Notepad.Priority = {
-    LOW: 0,
-    NORMAL: 1,
-    HIGH: 2
-  };
+}
+
+
+
+
+
 //Далее идет код для проверки работоспособности объекта, вставь его в конец скрипта. Твоя реализация методов объекта notepad должна проходить этот тест.
 
 const initialNotes = [
@@ -86,7 +92,7 @@ const initialNotes = [
 const notepad = new Notepad(initialNotes);
 
 
-console.log('Все текущие заметки: ', notepad.getNotes());
+console.log('Все текущие заметки: ', notepad.notes);
 
 
 notepad.saveNote({
@@ -105,7 +111,7 @@ notepad.saveNote({
   priority: Notepad.Priority.LOW,
 });
 
-console.log('Все текущие заметки после добавления: ', notepad.getNotes());
+console.log('Все текущие заметки после добавления: ', notepad.notes);
 
 
 //notepad.updateNotePriority('id-4', Notepad.Priority.NORMAL);
@@ -140,9 +146,9 @@ console.log('Все текущие заметки после добавлени�
 // );
 
 
-notepad.updateNoteContent('id-3', {
-  title: 'Get comfy with React.js or Vue.js',
-});
+// notepad.updateNoteContent('id-3', {
+//   title: 'Get comfy with React.js or Vue.js',
+// });
 
 // console.log(
 //   'Заметки после обновления контента заметки с id-3: ',
@@ -151,4 +157,4 @@ notepad.updateNoteContent('id-3', {
 
 
 // notepad.deleteNote('id-2');
-// console.log('Заметки после удаления с id -2: ', notepad.getNotes());
+// console.log('Заметки после удаления с id -2: ', notepad.notes);
