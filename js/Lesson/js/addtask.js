@@ -295,6 +295,245 @@
 
 
 
+//01.06
+
+
+/*
+  Напиши функцию-конструктор Account, которая добавляет будущему
+  объекту поля login, email. 
+  
+  В prototype функции-конструктора добавь метод getInfo(), 
+  который выводит в консоль значения полей login и email. 
+  
+  Обрати внимание, метод всего один, в поле prototype функции-конструктора, 
+  а использовать его смогут все экземпляры, по ссылке.
+  
+  Создать несколько экземпляров с разными значениями свойств, вывесди их в консоль.
+*/
+
+// function Account ({login, email}){
+// this.login = login;
+// this.email = email;
+
+// }
+// Account.prototype.getInfo = function(){
+//   console.log(`${this.login} ${this.email}`);
+// }
+
+
+// const account = new Account({login: 'Mangozedog',email: 'mango@dog.woof'});
+// const account2 = new Account({login: 'andrey', email: 'asdasdasdsa'});
+// console.log(Account.prototype.getInfo); // function
+// account.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+// account2.getInfo();
+
+
+/*
+  Напиши ES6 класс StringBuilder.
+  
+  На вход (в конструкторе) он получает один параметр string - строку,
+  которую записывает в свойство _value.
+  
+  Добавь классу следующие методы:
+  
+    - геттер value - возвращает текущее значение поля _value
+  
+    - append(str) - получает парметр str (строку) и добавляет ее в конец _value
+    
+    - prepend(str) - получает парметр str (строку) и добавляет ее в начало value
+  
+    - pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
+*/
+
+// class StringBuilder{
+//   constructor(string){
+//     this._value = string;
+//   }
+//   get value(){
+//     return this._value;
+//   }
+//   append(str){
+//     return this._value = this._value + str;
+//   }
+//   prepend(str){
+//     return this._value = str + this._value;
+//   }
+//   pad(str){
+//     return this._value = str + this._value+str;
+//   }
+
+// }
+
+// const builder = new StringBuilder('.');
+
+// builder.append('^'); 
+// console.log(builder.value); // '.^'
+
+// builder.prepend('^'); 
+// console.log(builder.value); // '^.^'
+
+// builder.pad('='); 
+// console.log(builder.value); // '=^.^='
+
+
+/*
+ * Напиши класс Car с указанными свойствами и методами
+*/
+
+// class Car {
+//   constructor({ maxSpeed = 0, price = 0}) {
+//     this.speed = 0;
+//     this.maxSpeed = maxSpeed;
+//     this.running = false;
+//     this.distance = 0;
+//     this._value = price;
+    
+//     /*
+//       Добавь свойства:
+//         - speed - для отслеживания текущей скорости, изначально 0.
+//         - maxSpeed - для хранения максимальной скорости 
+//         - running - для отслеживания заведен ли автомобиль, возможные значения true или false. Изначально false.
+//         - distance - содержит общий киллометраж, изначально с 0
+//     */
+//   }
+  
+
+//   turnOn() {
+//     this.running = true;
+    
+//     // Добавь код для того чтобы завести автомобиль
+//     // Просто записывает в свойство running значание true
+//   }
+
+//   turnOff() {
+//     this.running = false;
+//     // Добавь код для того чтобы заглушить автомобиль
+//     // Просто записывает в свойство running значание false
+//   }
+
+//   accelerate(spd) {
+//     if(spd< this.maxSpeed){
+//     this.speed = spd;
+//     }
+//     // Записывает в поле speed полученное значение, при условии что
+//     // оно не больше чем значение свойства maxSpeed
+//   }
+
+//   decelerate(spd) {
+//     if(spd<this.maxSpeed && spd>0){
+//       this.speed = spd;
+//     }
+    
+//     // Записывает в поле speed полученное значение, при условии что
+//     // оно не больше чем значение свойства maxSpeed и не меньше нуля
+//   }
+
+//   drive(hours) {
+// if(this.turnOn){
+//   this.distance = hours * this.speed;
+// }
+
+//     // Добавляет в поле distance киллометраж (hours умноженное на значение поля speed),
+//     // но только в том случае если машина заведена!
+//   }
+//   static getSpecs(car){
+//     console.log(`${car.maxSpeed}, ${car.speed}, ${car.running} и ${car.distance}`);
+//   }
+//   get value(){
+//     return this._value;
+//   }
+//   set value(newValue){
+//     this._value= newValue;
+//   }
+// }
+
+// const car = new Car({ maxSpeed: 200,price: 100 });
+
+// // console.log(car);
+// //  car.turnOn();
+// // car.accelerate(150);
+// // // console.log(car);
+// // car.drive(2);
+// // console.log(car);
+
+
+
+
+// /*
+// * Добавь к классу Car из предыдущего задания статический
+// * метод getSpecs, который принимает объект-машину как параметр
+// * и выводит в консоль значения полей maxSpeed, speed, running и distance.
+// */
+// car.turnOn();
+// car.accelerate(50);
+// car.drive(2);
+
+// Car.getSpecs(car); // maxSpeed: 100, speed: 50, running: true, distance: 100
+// console.log(car.value); // 2000
+
+// car.value = 4000;
+// console.log(car.value); // 4000
+
+
+
+
+/// Задача
+
+
+// let str = "How can mirrors be real if our eyes aren't real";
+// String.prototype.toJadenCase = function(){
+//   const array =  this.split(' ');
+//   let newArr = [];
+//   for(let el of array){
+//     newArr.push(el.replace(el[0], el[0].toUpperCase()))
+//   }
+//   return newArr.join(' ');
+  
+// };
+// console.log(str.toJadenCase());
+// console.log(str);
+
+
+// String.prototype.toJadenCase = function(){
+//   return this.split(' ').map(el=> el.replace(el[0], el[0].toUpperCase())).join(' ');
+// }
+
+// console.log(str.toJadenCase());
+// console.log(str);
+
+// console.log(0<Infinity);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
