@@ -293,10 +293,10 @@ const scientist = [
 // let delByA = scientist.filter(el=>el.name[0]!=='A');
 // console.log(delByA);
 
-//==============================з   ДЗ
-let skills = [ 'velit','adipisicing', 'amet', 'anim', 'commodo','amet', 
-'culpa', 'elit', 'ex','culpa', 'ipsum', 'irure','irure','irure','irure','irur2e', 'laborum', 'lorem', 
-'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ];
-console.log(skills);
-let result = skills.filter((el, index, arr)=> index ===arr.indexOf(el)).sort();
-console.log(result);
+// //==============================з   ДЗ
+// let skills = [ 'velit','adipisicing', 'amet', 'anim', 'commodo','amet', 
+// 'culpa', 'elit', 'ex','culpa', 'ipsum', 'irure','irure','irure','irure','irur2e', 'laborum', 'lorem', 
+// 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ];
+// console.log(skills);
+// let result = skills.filter((el, index, arr)=> index ===arr.indexOf(el)).sort();
+// console.log(result);

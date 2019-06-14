@@ -156,5 +156,6 @@ console.log('Все текущие заметки после добавлени�
 // );
 
 
-// notepad.deleteNote('id-2');
-// console.log('Заметки после удаления с id -2: ', notepad.notes);
+notepad.deleteNote('id-2');
+console.log('Заметки после удаления с id -2: ', notepad.notes);
+

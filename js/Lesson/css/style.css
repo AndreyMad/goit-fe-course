@@ -1,0 +1,9 @@
+.register{
+    margin-top: 50px;
+    background-color: green;
+}
+.img{
+    display: block;
+    width: 150px;
+    height: 100px;
+}
