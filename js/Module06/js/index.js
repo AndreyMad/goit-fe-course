@@ -14,7 +14,7 @@ class Notepad{
     return this._notes;
   }
 
-  findNoteById = function(id) {
+  findNoteById(id) {
     for (let element of notepad.notes) {
       if (id === element.id) {
         return element;
@@ -22,27 +22,27 @@ class Notepad{
     }
   }
 
- saveNote = function(note) {
+ saveNote(note) {
     notepad.notes.push(note);
     return note;
   }
 
-  deleteNote = function(id) {
+  deleteNote(id) {
     let indexToDelete = this.notes.indexOf(this.findNoteById(id));
     this.notes.splice(indexToDelete, 1);
   }
 
-   updateNoteContent = function(id, updatedContent) {
+   updateNoteContent(id, updatedContent) {
     Object.assign(this.findNoteById(id), updatedContent) 
   }
   
 
-  updateNotePriority= function(id, priority) {
+  updateNotePriority(id, priority) {
     this.findNoteById(id).priority = priority;
   }
 
 
-  filterNotesByQuery= function(query) {
+  filterNotesByQuery(query) {
     let newNote = [];
     for (let element of this.notes) {
       if (
@@ -55,7 +55,7 @@ class Notepad{
     return newNote;
   }
 
-  filterNotesByPriority= function(priority) {
+  filterNotesByPriority(priority) {
     let newArr = [];
     for (let element of this.notes) {
       if (priority === element.priority) {
@@ -114,46 +114,46 @@ notepad.saveNote({
 console.log('Все текущие заметки после добавления: ', notepad.notes);
 
 
-//notepad.updateNotePriority('id-4', Notepad.Priority.NORMAL);
+notepad.updateNotePriority('id-4', Notepad.Priority.NORMAL);
 
-// console.log(
-//   'Заметки после обновления приоритета для id-4: ',
-//   notepad.getNotes(),
-// );
-
-
-// console.log(
-//   'Заметки после обновления приоритета для id-3: ',
-//   notepad.getNotes(),
-// );
+console.log(
+  'Заметки после обновления приоритета для id-4: ',
+  notepad.notes,
+);
 
 
-// console.log(
-//   'Отфильтровали заметки по ключевому слову "html": ',
-//   notepad.filterNotesByQuery('html'),
-// );
+console.log(
+  'Заметки после обновления приоритета для id-3: ',
+  notepad.getNotes,
+);
 
 
-// console.log(
-//   'Отфильтровали заметки по ключевому слову "javascript": ',
-//   notepad.filterNotesByQuery('javascript'),
-// );
+console.log(
+  'Отфильтровали заметки по ключевому слову "html": ',
+  notepad.filterNotesByQuery('html'),
+);
 
 
-// console.log(
-//   'Отфильтровали заметки по нормальному приоритету: ',
-//   notepad.filterNotesByPriority(Notepad.Priority.NORMAL),
-// );
+console.log(
+  'Отфильтровали заметки по ключевому слову "javascript": ',
+  notepad.filterNotesByQuery('javascript'),
+);
 
 
-// notepad.updateNoteContent('id-3', {
-//   title: 'Get comfy with React.js or Vue.js',
-// });
+console.log(
+  'Отфильтровали заметки по нормальному приоритету: ',
+  notepad.filterNotesByPriority(Notepad.Priority.NORMAL),
+);
 
-// console.log(
-//   'Заметки после обновления контента заметки с id-3: ',
-//   notepad.getNotes(),
-// );
+
+notepad.updateNoteContent('id-3', {
+  title: 'Get comfy with React.js or Vue.js',
+});
+
+console.log(
+  'Заметки после обновления контента заметки с id-3: ',
+  notepad.getNotes,
+);
 
 
 notepad.deleteNote('id-2');
