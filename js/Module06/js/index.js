@@ -33,12 +33,14 @@ class Notepad{
   }
 
    updateNoteContent(id, updatedContent) {
-    Object.assign(this.findNoteById(id), updatedContent) 
+    let result = Object.assign(this.findNoteById(id), updatedContent);
+    return result;
   }
   
 
   updateNotePriority(id, priority) {
-    this.findNoteById(id).priority = priority;
+    let result =this.findNoteById(id).priority = priority;
+    return result;
   }
 
 
