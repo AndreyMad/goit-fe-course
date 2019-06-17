@@ -1,79 +1,185 @@
-/*  Перепишите все циклы for используя методы map, filter, find, reduce и т. д. */
+const users = [{
+    id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    skills: ['ipsum', 'lorem'],
+    gender: 'male',
+    age: 37,
+  },
+  {
+    id: '7a3cbd18-57a1-4534-8e12-1caad921bda1',
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+    gender: 'female',
+    age: 34,
+  },
+  {
+    id: '88beb2f3-e4c2-49f3-a0a0-ecf957a95af3',
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+    gender: 'male',
+    age: 24,
+  },
+  {
+    id: '249b6175-5c30-44c6-b154-f120923736f5',
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    skills: ['adipisicing', 'irure', 'velit'],
+    gender: 'female',
+    age: 21,
+  },
+  {
+    id: '334f8cb3-eb04-45e6-abf4-4935dd439b70',
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    skills: ['ex', 'culpa', 'nostrud'],
+    gender: 'male',
+    age: 27,
+  },
+  {
+    guid: '150b00fb-dd82-427d-9faf-2879ea87c695',
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    skills: ['non', 'amet', 'ipsum'],
+    gender: 'male',
+    age: 38,
+  },
+  {
+    id: 'e1bf46ab-7168-491e-925e-f01e21394812',
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    skills: ['lorem', 'veniam', 'culpa'],
+    gender: 'female',
+    age: 39,
+  },
+];
 
-/* 
-  Функция findGreaterThan принимает два параметра - число и массив.
-  Возвращает новый массив, содержащий элементы которые больше числа.
-// */
-// const findGreaterThan = (num, arr) => {
-//   //const result = [];
-//   //arr.filter(num=>num>arr[])
-//   // for (let i = 0, max = arr.length; i < max; i += 1) {
-//   //   if (arr[i] > num) {
-//   //     result.push(arr[i]);
-//   //   }
-//   // }
 
-//   return arr.filter(num=>num>arr[]);
-// };
+// 1.1. Задание 1
+//Получить массив имен всех пользователей (поле name).
 
-console.log( findGreaterThan(2, [1, 2, 3, 4, 5]) ); // [3, 4, 5,]
-console.log( findGreaterThan(3, [1, 2, 3, 4, 5]) ); // [4, 5,]
-console.log( findGreaterThan(1, [1, 2, 3, 4, 5]) ); // [2, 3, 4, 5,]
+// const getAllNames = users =>users.map (
+//     user => user.name
+// );
 
-/* 
-  Функция multiplyBy принимает два параметра - число и массив. 
-  Возвращает массив все значения которого умножены на число.
-*/
-const multiplyBy = (num, arr) => {
-  let result = [];
-  
-  for (let i = 0, max = arr.length; i < max; i += 1) {
-    result.push(arr[i] * num);
-  }
+// console.log(getAllNames(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 
 
-  return result;
-};
 
-console.log( multiplyBy(2, [1, 2, 3, 4, 5]) ); // [2, 4, 6, 8, 10]
-console.log( multiplyBy(3, [1, 2, 3, 4, 5]) ); // [3, 6, 9, 12, 15]
-console.log( multiplyBy(4, [1, 2, 3, 4, 5]) ); // [4, 8, 12, 16, 20]
+// 1.2. Задание 2
+// Получить массив объектов пользователей по цвету глаз (поле eyeColor).
+// 
+//  const getUsersByEyeColor = (users, color) => users.filter(user=>user.eyeColor === color);
 
-/* 
-  Функция summAllNumbers принимает любое число аргументов.
-  Возвращает число - сумму всех аргументов.
-*/
-function summAllNumbers(...args) {
-  let accumulator = 0;
+// console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
-  for (let i = 0, max = args.length; i < max; i += 1) {
-    accumulator += args[i];
-  }
 
-  return accumulator;
-}
+// 1.3. Задание 3
+// Получить массив имен пользователей по полу (поле gender).
+// 
+// const getUsersByGender = (users, gender) => users.filter(user=>user.gender === gender).map(user=>user.name)
 
-console.log( summAllNumbers(1, 2, 3) ); // 6
-console.log( summAllNumbers(1, 2, 3, 4) ); // 10
-console.log( summAllNumbers(1, 2, 3, 4, 5) ); // 15
+// console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
-/* 
-  Функция findEvery получает два аргумента - число и массив.
-  Возвращает true если все элементы массива больше или равны числу.
-  Иначе если есть хоть один элемент меньше числа, то возвращается false.
-*/
-const findEvery = (num, arr) => {
-  
-  
-  
-  for (let i = 0, max = arr.length; i < max; i += 1) {
-    if (arr[i] < num) {
-      return false;
-    }
-  }
 
-  return true;
-};
 
-console.log( findEvery(5, [5, 6, 7, 8, 9]) ); // true
-console.log( findEvery(6, [5, 6, 7, 8, 9]) ); // false
-console.log( findEvery(4, [5, 6, 7, 8, 9]) ); // true
+
+// 1.4. Задание 4
+// Получить массив только неактивных пользователей (поле isActive).
+
+// const getInactiveUsers = users => users.filter(user=>!user.isActive);
+// console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+
+
+
+// 1.5. Задание 5
+// Получить пользоваля (не массив) по email (поле email, он уникальный).
+// 
+// const getUserByEmail = (users, email) => users.find(user=>user.email===email);
+// 
+// console.log(getUserByEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
+// console.log(getUserByEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
+
+
+// 1.6. Задание 6
+// Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
+
+// const getUsersWithAge = (users, min, max) => users.filter(user=> user.age>min && user.age <max);
+
+// console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
+
+// console.log(getUsersWithAge(users, 30, 40));
+// // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
+
+
+
+// 1.7. Задание 7
+// Получить общую сумму баланса (поле balance) всех пользователей.
+
+ const getTotalBalance = users =>{ users.reduce((acc, user)=> acc + user.balance,0)};
+
+// console.log(getTotalBalance(users)); // 20916
+
+
+
+// 1.8. Задание 8
+// Массив имен всех пользователей у которых есть друг с указанным именем.
+
+// const getUsersByFriend = (users, name) => users.filter(user=>user.friends.find(userName => userName === name));
+// console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+// console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+// 3. Дополнительное задание
+// ⚠️ ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
+
+// Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке
+//const getTotalBalance = users =>{ users.reduce((acc, user)=> acc + user.balance,0)};
+const getUniqueSkills = users => users.reduce((allSkils, user)=> {
+ allSkils.push(...user.skills)
+  // return allSkils
+},[]
+);
+
+console.log(getUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+
+    
+    // Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+
+    // const getNamesSortedByFriendsCount = users => {
+    //   // твой код
+    // };
+
+    // console.log(getNamesSortedByFriendsCount(users));
+    // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
