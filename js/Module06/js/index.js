@@ -39,7 +39,7 @@ class Notepad{
   
 
   updateNotePriority(id, priority) {
-    let result =this.findNoteById(id).priority = priority;
+    let result = this.findNoteById(id).priority = priority;
     return result;
   }
 

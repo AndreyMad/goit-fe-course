@@ -88,66 +88,66 @@ const users = [
 // 1.1. Задание 1
 //Получить массив имен всех пользователей (поле name).
 
-const getAllNames = users =>users.map (
-    user => user.name
-);
+// const getAllNames = users =>users.map (
+//     user => user.name
+// );
 
-console.log(getAllNames(users));
+// console.log(getAllNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson',
 
 // 1.2. Задание 2
 // Получить массив объектов пользователей по цвету глаз (поле eyeColor).
 //
- const getUsersByEyeColor = (users, color) => users.filter(user=>user.eyeColor === color);
+//  const getUsersByEyeColor = (users, color) => users.filter(user=>user.eyeColor === color);
 
-console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+// console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
 // 1.3. Задание 3
 // Получить массив имен пользователей по полу (поле gender).
 //
- const getUsersByGender = (users, gender) => users.filter(user=>user.gender === gender).map(user=>user.name)
+//  const getUsersByGender = (users, gender) => users.filter(user=>user.gender === gender).map(user=>user.name)
 
-console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+// console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 // 1.4. Задание 4
 // Получить массив только неактивных пользователей (поле isActive).
 
-const getInactiveUsers = users => users.filter(user=>!user.isActive);
-console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+// const getInactiveUsers = users => users.filter(user=>!user.isActive);
+// console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 // 1.5. Задание 5
 // Получить пользоваля (не массив) по email (поле email, он уникальный).
 //
-const getUserByEmail = (users, email) => users.find(user=>user.email===email);
-
-console.log(getUserByEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
- console.log(getUserByEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
+// const getUserByEmail = (users, email) => users.find(user=>user.email===email);
+//
+// console.log(getUserByEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
+// console.log(getUserByEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
 
 // 1.6. Задание 6
 // Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
 
-const getUsersWithAge = (users, min, max) => users.filter(user=> user.age>min && user.age <max);
+// const getUsersWithAge = (users, min, max) => users.filter(user=> user.age>min && user.age <max);
 
-console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
+// console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
-console.log(getUsersWithAge(users, 30, 40));
+// console.log(getUsersWithAge(users, 30, 40));
 // // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
 // 1.7. Задание 7
 // Получить общую сумму баланса (поле balance) всех пользователей.
 
-const getTotalBalance = users => {
-  users.reduce((acc, user) => acc + user.balance, 0);
-};
+// const getTotalBalance = users => {
+//   users.reduce((acc, user) => acc + user.balance, 0);
+// };
 
-console.log(getTotalBalance(users)); // 20916
+// console.log(getTotalBalance(users)); // 20916
 
 // 1.8. Задание 8
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
-const getUsersByFriend = (users, name) => users.filter(user=>user.friends.find(userName => userName === name));
-console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
- console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+// const getUsersByFriend = (users, name) => users.filter(user=>user.friends.find(userName => userName === name));
+// console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+// console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
 
 // 3. Дополнительное задание
 // ⚠️ ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
