@@ -145,8 +145,10 @@ console.log(getTotalBalance(users)); // 20916
 // 1.8. Задание 8
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
-const getUsersByFriend = (users, name) => users.filter(user=>user.friends
-  .find(userFriendsName => userFriendsName === name)).map(user=>user.name);
+const getUsersByFriend = (users, name) => users.filter(user=>user.friends.includes(name)).map(user=>user.name)
+  
+  
+  //.find(userFriendsName => userFriendsName === name)).map(user=>user.name);
 
 
 //const getUsersByFriend =(users, name)=> users.filter(user=>user.friends.some(el=>el===name)).map(user=>user.name);
