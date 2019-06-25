@@ -65,6 +65,7 @@ list.before(clonedLink)
 
 //====================================== create site
 // Select elements
+/*
 let root = document.querySelector('#root');
 
 // creating elements
@@ -138,6 +139,6 @@ function createHtml(tag, className, atrObject,
 let divCreateWithFunction = createHtml("div", 'name', {id: '#name'}, false,
  '<span>lorem ispum</span>', mainTitleContainer, 'prepend');
  let title12= createHtml('h3', 0, {id:'tittt'}, true, 'Title', divCreateWithFunction,'prepend')
-
+*/
 
 
