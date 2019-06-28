@@ -1,0 +1,88 @@
+.form {
+  width: 300px;
+  margin: auto;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+.modal {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: teal;
+}
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  cursor: pointer;
+}
+.hide {
+  opacity: 0;
+  transition: 1s;
+}
+
+.main {
+  width: 500px;
+  height: 500px;
+  background-color: green;
+  display: flex;
+  cursor: pointer;
+  margin: 20px auto;
+}
+.sub {
+  width: 400px;
+  height: 400px;
+  background-color: yellow;
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+}
+.minor {
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+}
+.child {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+}
+
+
+.gallery{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 100vh;
+    background-color: lightgrey;
+}
+.gallery_item{
+    flex-basis: 30%;
+    height: 30%;
+    background-color: red;
+    transition: 1s;
+    cursor: pointer;
+}
+.gallery_item--scale{
+    transform: rotate(340deg)
+}
+
