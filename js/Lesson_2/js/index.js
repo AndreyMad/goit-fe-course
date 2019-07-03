@@ -31,14 +31,11 @@ button.addEventListener('click', sumFunc);
   - Привяжите вызовы методов и значение счетчика к раметке
 */
 
-
-
 // class Counter(){
 //     value = document.querySelector('.value').textContent;
 //     onChange(newValue){
 //         value = newValue;
 //     }
-
 
 // };
 // let counter = new Counter;
@@ -48,8 +45,6 @@ button.addEventListener('click', sumFunc);
 
 // sub.addEventListener('click', counter.decrement);
 // add.addEventListener('click', counter.increment);
-
-
 
 /*
   Есть форма с набором радиокнопок. Пользователь выбирает вариант ответа, 
@@ -87,14 +82,13 @@ function alertSrc(e){
 gallery.addEventListener('click', alertSrc)
 */
 
-
 /*
   Дан ul, а внутри него произвольное количество li с текстом и кнопкой. 
   Сделайте так, чтобы по нажатию на кнопку, удалялся тот li в котором
   она находится. Обязательно используйте делегирование событий.
 */
 
-
+/*
 let list = document.querySelector('.list');
 function deleteItem(e){
     if(e.target.dataset.action === 'delete'){
@@ -102,3 +96,86 @@ function deleteItem(e){
    }
 }
 list.addEventListener('click', deleteItem)
+*/
+
+/*
+  Дан набор инпутов. Сделайте так, чтобы при потере фокуса все 
+  инпуты проверяли свое содержимое на правильное количество символов. 
+  
+  - Сколько символов должно быть в инпуте, указывается в атрибуте data-length. 
+  - Если введено подходящее количество, то outline инпута становится зеленым, 
+    если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
+*/
+/*
+let inputList = document.querySelector('.input-list');
+function checkInput(e){
+      if(e.target.value.length >= e.target.dataset.length ){
+        e.target.classList.remove('invalid')
+        e.target.classList.add('valid')
+      }else {
+        e.target.classList.remove('valid')
+        e.target.classList.add('invalid')
+      }
+}
+inputList.addEventListener('change', checkInput)
+*/
+
+/*
+  Напишите скрипт который:
+    
+    - При фокусе текстового поля, в p.message рендерит строку "Input is in focus!"
+    - При наборе текста в инпуте (событие input), текущее его значение должно 
+      отображаться в p.input-value 
+*/
+/*
+let input = document.querySelector(".input");
+let inputValue = document.querySelector(".input-value");
+let inputListener = () => {
+  inputValue.textContent = `Current input value: ${input.value}`;
+};
+let inputFocus = () => {
+  if (!input.value) {
+    inputValue.textContent = `Input is in focus!`;
+  }
+};
+input.addEventListener("focus", inputFocus);
+input.addEventListener("blur", inputListener);
+input.addEventListener("input", inputListener);
+*/
+
+
+
+
+/*
+  На вкладках HTML и CSS уже готовая верстка модального окна.
+  По умолчанию модальное окно скрыто классом modal-hidden.
+  
+  Напишите скрипт который реализует следующее поведение:
+ 
+  - При клике на кнопке с надписью "Open Modal", модальное окно с классом modal, 
+    должно появляться. Для этого необходимо убрать класс modal-hidden. 
+    Для выбора модального модального окна используйте класс js-modal-backdrop
+ 
+  - При открытом модальном окне, клик на кнопку с крестиком (data-action="close-modal")
+    или на серый фон с прозрачностью (js-modal-backdrop), модальное окно должно закрываться.
+*/
+
+
+let btn = document.querySelector('.btn')
+let modal = document.querySelector('.js-modal-backdrop');
+let closeButton = document.querySelector('.close-btn')
+console.log(closeButton);
+
+let openModal=()=>{
+  modal.classList.remove('modal-hidden')
+}
+let closeModal =(e)=>{
+  if(e.target.classList.contains('js-modal-backdrop') ||e.target.classList.contains('close-btn')){
+modal.classList.add('modal-hidden')
+}}
+
+
+btn.addEventListener('click', openModal)
+closeButton.addEventListener('click', closeModal)
+modal.addEventListener('click', closeModal)
+
