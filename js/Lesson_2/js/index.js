@@ -161,21 +161,46 @@ input.addEventListener("input", inputListener);
 */
 
 
-let btn = document.querySelector('.btn')
-let modal = document.querySelector('.js-modal-backdrop');
-let closeButton = document.querySelector('.close-btn')
-console.log(closeButton);
+// let btn = document.querySelector('.btn')
+// let modal = document.querySelector('.js-modal-backdrop');
+// let closeButton = document.querySelector('.close-btn')
+// console.log(closeButton);
 
-let openModal=()=>{
-  modal.classList.remove('modal-hidden')
+// let openModal=()=>{
+//   modal.classList.remove('modal-hidden')
+// }
+// let closeModal =(e)=>{
+//   if(e.target.classList.contains('js-modal-backdrop') ||e.target.classList.contains('close-btn')){
+// modal.classList.add('modal-hidden')
+// }}
+
+
+// btn.addEventListener('click', openModal)
+// closeButton.addEventListener('click', closeModal)
+// modal.addEventListener('click', closeModal)
+
+/*
+  Ознакомьтесь с HTML и CSS.
+  
+  Есть меню навигации, необходимо написать скрипт, который
+  при клике на пункт меню добавит ему класс active,
+  таким образом выделив текущую (активную) ссылку,
+  при этом убрав его у всех остальных элементов меню.
+  
+  Пунктов меню может быть произвольное количество, используйте
+  прием делегирование событий. Учтите клик по самому ul, его
+  необходимо игнорировать.
+  
+  При клике по ссылкам не должна перезагружаться страница!
+*/
+let menu = document.querySelector('.js-menu');
+let childArr = [...menu.children];
+function menuActive (e){
+  for(let el of childArr){
+    el.children[0].classList.remove('active')
+  }
+  if(e.target.classList.contains('menu-link')){
+    e.target.classList.add('active')
+  }
 }
-let closeModal =(e)=>{
-  if(e.target.classList.contains('js-modal-backdrop') ||e.target.classList.contains('close-btn')){
-modal.classList.add('modal-hidden')
-}}
-
-
-btn.addEventListener('click', openModal)
-closeButton.addEventListener('click', closeModal)
-modal.addEventListener('click', closeModal)
-
+menu.addEventListener('click', menuActive)
