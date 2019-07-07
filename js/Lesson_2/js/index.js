@@ -9,16 +9,16 @@ button.addEventListener('click', counter);
 */
 
 //////////////// Task 2/////////////////
-/*
-let value1 = document.getElementsByTagName("input")[0];
-let value2 = document.getElementsByTagName("input")[1];
-let button = document.querySelector('button');
-let result = document.querySelector('.result');
-let sumFunc = () => {
-    result.textContent = (parseInt(value1.value) + parseInt(value2.value));
-}
-button.addEventListener('click', sumFunc);
-*/
+
+// let value1 = document.getElementsByTagName("input")[0];
+// let value2 = document.getElementsByTagName("input")[1];
+// let button = document.querySelector('button');
+// let result = document.querySelector('.result');
+// let sumFunc = () => {
+//     result.textContent = (parseInt(value1.value) + parseInt(value2.value));
+// }
+// button.addEventListener('click', sumFunc);
+
 
 //////////////// Task 3/////////////////
 
@@ -29,23 +29,35 @@ button.addEventListener('click', sumFunc);
   - Класс принимает один параметр - onChange, функцию для обновления интерфейса при изменении счетчика
   - Добавьте классу методы increment и decrement для увеличения и ументшение значения счетчика
   - Привяжите вызовы методов и значение счетчика к раметке
+*//*
+let sub = document.querySelector('.sub');
+let add = document.querySelector('.add');
+let result = document.querySelector('.value')
+function onChange(){
+  result.textContent=this.value;
+}
+class Counter{
+   constructor(onChange){
+     this.onChange = onChange;
+     this.value = +result.textContent;
+
+   }
+   more(){
+     this.value +=1;
+     this.onChange;
+   }
+   less(){
+     this.value-=1;
+     this.onChange;
+   }
+
+};
+const counter = new Counter(onChange);
+
+
+sub.addEventListener('click', counter.more.bind(counter));
+add.addEventListener('click', counter.less.bind(counter));
 */
-
-// class Counter(){
-//     value = document.querySelector('.value').textContent;
-//     onChange(newValue){
-//         value = newValue;
-//     }
-
-// };
-// let counter = new Counter;
-
-// let sub = document.querySelector('.sub');
-// let add = document.querySelector('.add');
-
-// sub.addEventListener('click', counter.decrement);
-// add.addEventListener('click', counter.increment);
-
 /*
   Есть форма с набором радиокнопок. Пользователь выбирает вариант ответа, 
   после чего нажимает кнопку "Submit" и происходит отправка формы.
@@ -54,33 +66,33 @@ button.addEventListener('click', sumFunc);
     - не должна перезагружаться страница
     - необходимо получить выбранную опцию и вывести в параграф с классом .result
 */
-/*
-
-let btn = document.querySelector('.btn');
 
 
-function checkData(e){
-        e.preventDefault();
-        let checkedButton = document.querySelector('input:checked');
-        document.querySelector('.result').textContent= `Result: ${checkedButton.value}`;
+// let btn = document.querySelector('.btn');
+
+
+// function checkData(e){
+//         e.preventDefault();
+//         let checkedButton = document.querySelector('input:checked');
+//         document.querySelector('.result').textContent= `Result: ${checkedButton.value}`;
     
-};
-btn.addEventListener('click', checkData); 
-*/
+// };
+// btn.addEventListener('click', checkData); 
+
 
 /*
   Дан список изображений. Сделайте так, чтобы по клику на картинку 
   алертом выводился ее src. Обязательно используйте делегирование событий.
 */
 
-/*
-let gallery = document.querySelector('.images')
-function alertSrc(e){
-    if(e.target!==gallery){
-    alert(e.target.src)}
-}
-gallery.addEventListener('click', alertSrc)
-*/
+
+// let gallery = document.querySelector('.images')
+// function alertSrc(e){
+//     if(e.target!==gallery){
+//     alert(e.target.src)}
+// }
+// gallery.addEventListener('click', alertSrc)
+
 
 /*
   Дан ul, а внутри него произвольное количество li с текстом и кнопкой. 
@@ -88,15 +100,16 @@ gallery.addEventListener('click', alertSrc)
   она находится. Обязательно используйте делегирование событий.
 */
 
-/*
-let list = document.querySelector('.list');
-function deleteItem(e){
-    if(e.target.dataset.action === 'delete'){
-     list.removeChild(e.target.parentNode)
-   }
-}
-list.addEventListener('click', deleteItem)
-*/
+
+// let list = document.querySelector('.list');
+// function deleteItem(e){
+//     if(e.target.dataset.action === 'delete'){
+//      list.removeChild(e.target.parentNode)
+     //   e.target.closest('li').remove();//або так
+//    }
+// }
+// list.addEventListener('click', deleteItem)
+
 
 /*
   Дан набор инпутов. Сделайте так, чтобы при потере фокуса все 
@@ -106,19 +119,19 @@ list.addEventListener('click', deleteItem)
   - Если введено подходящее количество, то outline инпута становится зеленым, 
     если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
 */
-/*
-let inputList = document.querySelector('.input-list');
-function checkInput(e){
-      if(e.target.value.length >= e.target.dataset.length ){
-        e.target.classList.remove('invalid')
-        e.target.classList.add('valid')
-      }else {
-        e.target.classList.remove('valid')
-        e.target.classList.add('invalid')
-      }
-}
-inputList.addEventListener('change', checkInput)
-*/
+
+// let inputList = document.querySelector('.input-list');
+// function checkInput(e){
+//       if(e.target.value.length == e.target.dataset.length ){
+//         e.target.classList.remove('invalid')
+//         e.target.classList.add('valid')
+//       }else {
+//         e.target.classList.remove('valid')
+//         e.target.classList.add('invalid')
+//       }
+// }
+// inputList.addEventListener('change', checkInput)
+
 
 /*
   Напишите скрипт который:
@@ -127,21 +140,22 @@ inputList.addEventListener('change', checkInput)
     - При наборе текста в инпуте (событие input), текущее его значение должно 
       отображаться в p.input-value 
 */
-/*
-let input = document.querySelector(".input");
-let inputValue = document.querySelector(".input-value");
-let inputListener = () => {
-  inputValue.textContent = `Current input value: ${input.value}`;
-};
-let inputFocus = () => {
-  if (!input.value) {
-    inputValue.textContent = `Input is in focus!`;
-  }
-};
-input.addEventListener("focus", inputFocus);
-input.addEventListener("blur", inputListener);
-input.addEventListener("input", inputListener);
-*/
+
+// let input = document.querySelector(".input");
+// let inputValue = document.querySelector(".input-value");
+// //let message = document.querySelector('.message');
+// let inputListener = () => {
+//   inputValue.textContent = `Current input value: ${input.value}`;
+// };
+// let inputFocus = () => {
+//   if (!input.value) {
+//     inputValue.textContent = `Input is in focus!`;
+//   }
+// };
+// input.addEventListener("focus", inputFocus);
+// input.addEventListener("blur", inputListener);
+// input.addEventListener("input", inputListener);
+
 
 
 
@@ -194,7 +208,8 @@ input.addEventListener("input", inputListener);
   При клике по ссылкам не должна перезагружаться страница!
 */
 let menu = document.querySelector('.js-menu');
-let childArr = [...menu.children];
+let childArr = menu.children;
+console.log(typeof childArr);
 function menuActive (e){
   for(let el of childArr){
     el.children[0].classList.remove('active')
@@ -204,3 +219,23 @@ function menuActive (e){
   }
 }
 menu.addEventListener('click', menuActive)
+
+
+if(!e.target.id){
+  alert("has id");
+}else{
+
+
+  
+////////////////////////////////////////////////////////////////////////////////////////
+function editNote({target}){
+  console.log(target);
+    if(target.parentNode.dataset.action ==='edit-note'){
+      let noteToEdit = notepad.findNoteById(target.closest('.note-list__item').dataset.id);
+      inputBodyValue.value=noteToEdit.body;
+      inputTitleValue.value = noteToEdit.title;
+      
+    }
+  }
+  
+  

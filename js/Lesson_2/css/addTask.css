@@ -1,4 +1,4 @@
-/* body {
+ body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,8 +193,8 @@
     font-size: 24px;
     cursor: pointer;
     font-family: inherit;
-  } */
-  /* body {
+  } 
+ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -282,9 +282,11 @@
     height: 100%;
     background-color: rgba(37, 45, 58, 0.7);
     transition: 1s;
+    display: block;
   }
   
   .modal-hidden {
+   
     display: none;
     transition: 1s;
   }
@@ -407,7 +409,7 @@
     cursor: pointer;
     font-family: inherit;
   }
-     */
+    
      * {
       box-sizing: border-box;
       padding: 0;
