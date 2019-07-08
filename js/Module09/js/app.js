@@ -227,19 +227,18 @@ let inputBodyValue = document.getElementsByName("note_body")[0];
 
 function submit(e) {
   e.preventDefault();
-
-  if(inputTitleValue.value && inputBodyValue.value){
-
+  
+  if(inputTitleValue.value && inputBodyValue.value){   
     let newNote = notepad.saveNote({
-    id :generateUniqueId(),
-    title:inputTitleValue.value,
-    body:inputBodyValue.value,
-    priority: PRIORITY_TYPES.LOW
-  });
-  inputTitleValue.value = '';
-  inputBodyValue.value = '';
-  addListItem(root, newNote)
-}else alert("Необходимо заполнить все поля!")
+      id :generateUniqueId(),
+      title:inputTitleValue.value,
+      body:inputBodyValue.value,
+      priority: PRIORITY_TYPES.LOW
+    });
+    inputTitleValue.value = '';
+    inputBodyValue.value = '';
+    addListItem(root, newNote)}
+else alert("Необходимо заполнить все поля!")
 }
 
 function addListItem(listRef, note){
@@ -268,3 +267,47 @@ inputValue.addEventListener('input', filterNotes);
 
 
 
+
+////////////////////////////////////////////////////////////////////////////////////////
+// Делал для себя//
+root.addEventListener('click', editNote)
+root.addEventListener('click', changePriority)
+let noteToEdit = '';
+
+function editNote({target}){
+  if(target.parentNode.dataset.action ==='edit-note'){
+    noteToEdit = notepad.findNoteById(target.closest('.note-list__item').dataset.id);
+    inputBodyValue.value=noteToEdit.body;
+    inputTitleValue.value = noteToEdit.title;
+    submitBtn.removeEventListener('click', submit);
+    submitBtn.addEventListener('click', saveEdited);
+    
+  }
+}
+
+function saveEdited(e){
+  e.preventDefault();
+  notepad.updateNoteContent(noteToEdit.id, {title: inputTitleValue.value, body:inputBodyValue.value})
+  rootRefresh()
+  inputTitleValue.value = '';
+  inputBodyValue.value = '';
+  submitBtn.addEventListener('click', submit)
+  submitBtn.removeEventListener('click', saveEdited )
+
+}
+
+function changePriority({target}){
+  noteToEdit = notepad.findNoteById(target.closest('.note-list__item').dataset.id);
+  if(target.parentNode.dataset.action==='decrease-priority'&&noteToEdit.priority>1){
+    noteToEdit.priority --;
+    rootRefresh()
+  }if(target.parentNode.dataset.action==='increase-priority'&&noteToEdit.priority<3){
+    noteToEdit.priority ++;
+    rootRefresh()
+  }
+
+}
+function rootRefresh(){
+  root.innerHTML='';
+  renderNoteList(root, notepad.notes);
+}
