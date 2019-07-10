@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <template id="simpleTemplate">
+      <h1>Hello I am {{ name }}. I am {{ position }}</h1>
+      <p>I learn in {{ languge }}</p>
+    </template>
+    <template id="liTemplate">
+      <h2>Frameworks</h2>
+      <ul>
+        {{#each frameworks}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      <h2>Libraries</h2>
+      <ul>
+        {{#each libs}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </template>
+    <template id="arrayTemplate">
+        <ul>
+            {{#each this}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </template>
+
+
+
+    <template id="ifTemplate">
+        <h1>{{title}}</h1>
+        <p>Hello {{user.name}}</p>
+        {{#if domestic}}
+            <p>You can take your order in {{domestic_address}}</p>
+            {{else}}
+            <p>You can take your order in {{international_address}}</p>
+        {{/if}}
+    </template>
+
+    <template id="gallery">
+        <div class="gallery">
+            <h2 class="gallery-title">Gallery</h2>
+            <div class="gallery-content">
+            {{#each this}}
+            <div class="gallery-item">
+            <img class="gallery-img" src="{{this.img}}" alt="{{this.text}}">
+            <p class="gallery-text">{{this.text}}</p>
+        </div>
+            {{/each}}
+        </div>
+        </div>
+
+
+    </template>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

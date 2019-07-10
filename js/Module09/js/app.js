@@ -270,6 +270,7 @@ inputValue.addEventListener('input', filterNotes);
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // Делал для себя//
+
 root.addEventListener('click', editNote)
 root.addEventListener('click', changePriority)
 let noteToEdit = '';
@@ -298,10 +299,10 @@ function saveEdited(e){
 
 function changePriority({target}){
   noteToEdit = notepad.findNoteById(target.closest('.note-list__item').dataset.id);
-  if(target.parentNode.dataset.action==='decrease-priority'&&noteToEdit.priority>1){
+  if(target.parentNode.dataset.action==='decrease-priority'&&noteToEdit.priority>0){
     noteToEdit.priority --;
     rootRefresh()
-  }if(target.parentNode.dataset.action==='increase-priority'&&noteToEdit.priority<3){
+  }if(target.parentNode.dataset.action==='increase-priority'&&noteToEdit.priority<2){
     noteToEdit.priority ++;
     rootRefresh()
   }

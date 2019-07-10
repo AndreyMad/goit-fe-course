@@ -228,14 +228,3 @@ if(!e.target.id){
 
   
 ////////////////////////////////////////////////////////////////////////////////////////
-function editNote({target}){
-  console.log(target);
-    if(target.parentNode.dataset.action ==='edit-note'){
-      let noteToEdit = notepad.findNoteById(target.closest('.note-list__item').dataset.id);
-      inputBodyValue.value=noteToEdit.body;
-      inputTitleValue.value = noteToEdit.title;
-      
-    }
-  }
-  
-  
