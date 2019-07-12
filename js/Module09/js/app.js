@@ -117,8 +117,16 @@ const initialNotes = [
 ];
 
 ////////////////////////////////////////////////////////////////////
+let notepad = [];
+if((localStorage.getItem('notes') === null)){
 
-const notepad = new Notepad(initialNotes);
+  notepad = new Notepad(initialNotes);
+ 
+}else{
+  let localNotes = JSON.parse(localStorage.getItem('notes'))
+  notepad = new Notepad(localNotes)
+}
+
 
 function createNoteContent({ title, body }) {
   let noteContent = document.createElement("div");
@@ -237,7 +245,9 @@ function submit(e) {
     });
     inputTitleValue.value = '';
     inputBodyValue.value = '';
-    addListItem(root, newNote)}
+    addListItem(root, newNote)
+    pushToLocalStorage()
+  }
 else alert("Необходимо заполнить все поля!")
 }
 
@@ -250,6 +260,7 @@ function deleteNote({target}){
   if(target.parentNode.dataset.action ==='delete-note'){
     notepad.deleteNote(target.closest('.note-list__item').dataset.id);
     target.closest('.note-list__item').remove();
+    pushToLocalStorage()
   }
 }
 root.addEventListener('click', deleteNote)
@@ -294,6 +305,7 @@ function saveEdited(e){
   inputBodyValue.value = '';
   submitBtn.addEventListener('click', submit)
   submitBtn.removeEventListener('click', saveEdited )
+  pushToLocalStorage()
 
 }
 
@@ -305,10 +317,17 @@ function changePriority({target}){
   }if(target.parentNode.dataset.action==='increase-priority'&&noteToEdit.priority<2){
     noteToEdit.priority ++;
     rootRefresh()
+    pushToLocalStorage()
   }
 
 }
 function rootRefresh(){
   root.innerHTML='';
   renderNoteList(root, notepad.notes);
+}
+
+let pushToLocalStorage=()=>{
+  let noteToLocal= JSON.stringify(notepad.notes)
+ 
+  localStorage.setItem('notes',noteToLocal)
 }
