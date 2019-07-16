@@ -1,4 +1,5 @@
 import './sass/main.scss';
-import View from './view';
-const view = new View;
-console.log(view);
+import './js/utils/app'
+// import View from './js/utils/view';
+// const view = new View;
+// console.log(view);

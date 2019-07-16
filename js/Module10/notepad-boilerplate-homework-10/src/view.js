@@ -1,5 +1,6 @@
-export default class View{
-    constructor(){
-        this._body = document.querySelector('body');
-    }
-}
+// export default class View{
+//     constructor(){
+//         this._body = document.querySelector('body');
+//     }
+// }
+
