@@ -1,0 +1,14 @@
+{
+  "favourite": [
+    {
+      "src": "https://pixabay.com/get/57e7d6434b5ba514f6da8c7dda79327e1437d7e05b4c704c732b7ad6914fc45b_640.jpg",
+      "alt": "photo/",
+      "id": 1
+    },
+    {
+      "src": "https://pixabay.com/get/5fe4d04b4253b108f5d08460962d377f1d36dbed4e50744f712e79d29545cd_640.jpg",
+      "alt": "photo/",
+      "id": 2
+    }
+  ]
+}

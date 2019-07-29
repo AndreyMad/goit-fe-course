@@ -2,13 +2,16 @@ import initialNotes from "../../assets/notes.json";
 import { PRIORITY_TYPES } from "./constants";
 import Notepad from "./notepad-model";
 import { createListItem, renderNoteList } from "./view";
+import MicroModal from "micromodal";
 
 let root = document.querySelector(".note-list");
-let submitBtn = document.querySelector(".button--wide");
 let inputTitleValue = document.getElementsByName("note_title")[0];
 let inputBodyValue = document.getElementsByName("note_body")[0];
 let shortId = require("shortid");
+let modalBtn = document.querySelector(".page-header__button");
 let notepad;
+let modalForm = document.querySelector(".modal__container");
+let inputValue = document.querySelector(".search-form__input");
 
 if (localStorage.getItem("notes") !== null) {
   let localNotes = JSON.parse(localStorage.getItem("notes"));
@@ -31,7 +34,6 @@ function addListItem(listRef, note) {
 
 function submit(e) {
   e.preventDefault();
-
   if (inputTitleValue.value && inputBodyValue.value) {
     let newNote = notepad.saveNote({
       id: shortId(),
@@ -46,16 +48,15 @@ function submit(e) {
   } else alert("Необходимо заполнить все поля!");
 }
 
-let inputValue = document.querySelector(".search-form__input");
 function filterNotes({ target }) {
   root.innerHTML = "";
   renderNoteList(root, notepad.filterNotesByQuery(target.value));
 }
 
-submitBtn.addEventListener("click", submit);
+modalForm.addEventListener("submit", submit);
 root.addEventListener("click", deleteNote);
 inputValue.addEventListener("input", filterNotes);
-renderNoteList(root, notepad.notes);
+//renderNoteList(root, notepad.notes);
 
 //////////////////////////////////////////
 let noteToEdit = "";
@@ -67,8 +68,8 @@ function editNote({ target }) {
     );
     inputBodyValue.value = noteToEdit.body;
     inputTitleValue.value = noteToEdit.title;
-    submitBtn.removeEventListener("click", submit);
-    submitBtn.addEventListener("click", saveEdited);
+    modal.removeEventListener("click", submit);
+    modal.addEventListener("click", saveEdited);
   }
 }
 
@@ -81,8 +82,8 @@ function saveEdited(e) {
   rootRefresh();
   inputTitleValue.value = "";
   inputBodyValue.value = "";
-  submitBtn.addEventListener("click", submit);
-  submitBtn.removeEventListener("click", saveEdited);
+  modal.addEventListener("click", submit);
+  modal.removeEventListener("click", saveEdited);
   pushToLocalStorage();
 }
 
@@ -116,8 +117,15 @@ let pushToLocalStorage = () => {
 
   localStorage.setItem("notes", noteToLocal);
 };
+let showModal = () => {
+  MicroModal.show("note-editor-modal");
+};
+let closeModal = () => {
+  MicroModal.close("note-editor-modal");
+};
 
 root.addEventListener("click", editNote);
 root.addEventListener("click", changePriority);
+modalBtn.addEventListener("click", showModal);
 
 export { initialNotes };
