@@ -6,12 +6,15 @@ import MicroModal from "micromodal";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
+///declaration
 const notyf = new Notyf({ duration: 2000 });
-
 let inputTitleValue = document.getElementsByName("note_title")[0];
 let inputBodyValue = document.getElementsByName("note_body")[0];
 let shortId = require("shortid");
 let notepad;
+let noteToEdit = "";
+
+
 
 if (localStorage.getItem("notes") !== null) {
   let localNotes = JSON.parse(localStorage.getItem("notes"));
@@ -57,11 +60,6 @@ function filterNotes({ target }) {
   refs.root.innerHTML = "";
   renderNoteList(refs.root, notepad.filterNotesByQuery(target.value));
 }
-
-//renderNoteList(root, notepad.notes);
-
-//////////////////////////////////////////
-let noteToEdit = "";
 
 function editNote({ target }) {
   if (target.parentNode.dataset.action === "edit-note") {
@@ -126,13 +124,14 @@ let showModal = () => {
   clearModal();
   MicroModal.show("note-editor-modal");
 };
+let closeModal = () => {
+  MicroModal.close("note-editor-modal");
+};
 let clearModal = () => {
   inputTitleValue.value = "";
   inputBodyValue.value = "";
 };
-let closeModal = () => {
-  MicroModal.close("note-editor-modal");
-};
+
 
 /////listeners
 refs.modalForm.addEventListener("submit", submit);
