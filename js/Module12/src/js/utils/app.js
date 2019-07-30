@@ -126,12 +126,12 @@ let showModal = () => {
   clearModal();
   MicroModal.show("note-editor-modal");
 };
-let closeModal = () => {
-  MicroModal.close("note-editor-modal");
-};
 let clearModal = () => {
   inputTitleValue.value = "";
   inputBodyValue.value = "";
+};
+let closeModal = () => {
+  MicroModal.close("note-editor-modal");
 };
 
 /////listeners
