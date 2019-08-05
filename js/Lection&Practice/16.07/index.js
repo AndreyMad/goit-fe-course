@@ -64,86 +64,54 @@ daysText.textContent = days<10?`0${days}`:days;
 }
 */
 // setInterval(timerToVacation, 1000)
-class Timer{
-    constructor(secClassName, minClassName, hoursClassName, 
-        daysClassName, deadLine){
-        this.secText = document.querySelector(secClassName),
-        this.minText = document.querySelector(minClassName),
-        this.hoursText = document.querySelector(hoursClassName),
-        this.daysText = document.querySelector(daysClassName),
-        this.deadLine=new Date(deadLine.year, deadLine.month, deadLine.date, deadLine.hour, deadLine.minute, deadLine.sec),
-        //перезаписуем logic з привязанним контекстом
-        
-        this.logic = this.logic.bind(this);
+class Timer {
+  constructor(
+    secClassName,
+    minClassName,
+    hoursClassName,
+    daysClassName,
+    deadLine
+  ) {
+    (this.secText = document.querySelector(secClassName)),
+      (this.minText = document.querySelector(minClassName)),
+      (this.hoursText = document.querySelector(hoursClassName)),
+      (this.daysText = document.querySelector(daysClassName)),
+      (this.deadLine = new Date(
+        deadLine.year,
+        deadLine.month,
+        deadLine.date,
+        deadLine.hour,
+        deadLine.minute,
+        deadLine.sec
+      )),
+      //перезаписуем logic з привязанним контекстом
 
-    }
-    logic(){
-        const today = new Date();
-        const delta = this.deadLine - today;
-        const sec = Math.floor(delta/1000)%60;
-        const min = Math.floor(delta/1000/60)%60;
-        const hours = Math.floor(delta/1000/60/60)%24;
-        const days = Math.floor(delta/1000/60/60/24);
-        this.secText.textContent = sec<10 ?`0${sec}`:sec;
-        this.minText.textContent = min<10?`0${min}`:min;
-        this.hoursText.textContent = hours<10?`0${hours}`:hours;
-        this.daysText.textContent = days<10?`0${days}`:days;
-    }
-    start(){
-        setInterval(this.logic, 1000)
-    }
-
+      (this.logic = this.logic.bind(this));
+  }
+  logic() {
+    const today = new Date();
+    const delta = this.deadLine - today;
+    const sec = Math.floor(delta / 1000) % 60;
+    const min = Math.floor(delta / 1000 / 60) % 60;
+    const hours = Math.floor(delta / 1000 / 60 / 60) % 24;
+    const days = Math.floor(delta / 1000 / 60 / 60 / 24);
+    this.secText.textContent = sec < 10 ? `0${sec}` : sec;
+    this.minText.textContent = min < 10 ? `0${min}` : min;
+    this.hoursText.textContent = hours < 10 ? `0${hours}` : hours;
+    this.daysText.textContent = days < 10 ? `0${days}` : days;
+  }
+  start() {
+    setInterval(this.logic, 1000);
+  }
 }
 
-const result = new Timer('.seconds', '.minutes', '.hours', '.days', 
-{year:2019,month:7, date:31, hour:15, minute:45, sec: 0})
+const result = new Timer(".seconds", ".minutes", ".hours", ".days", {
+  year: 2019,
+  month: 7,
+  date: 30,
+  hour: 15,
+  minute: 45,
+  sec: 0
+});
 
 result.start();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
