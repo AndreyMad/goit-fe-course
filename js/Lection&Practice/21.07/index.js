@@ -46,38 +46,38 @@ section.addEventListener('click', changeTheme)
  */
 /*
 const colors = [
-    "#FFFFFF",
-    "#2196F3",
-    "#4CAF50",
-    "#FF9800",
-    "#009688",
-    "#795548"
-  ];
-  let body = document.querySelector('body')
-  const buttons = document.querySelectorAll('button')
-  const [start, stop]= buttons;
+  "#FFFFFF",
+  "#2196F3",
+  "#4CAF50",
+  "#FF9800",
+  "#009688",
+  "#795548"
+];
+let body = document.querySelector("body");
+const buttons = document.querySelectorAll("button");
+const [start, stop] = buttons;
 
-  let nextColor=(arr)=>{
-      let colorIndex = Math.floor(Math.random()*arr.length)
-        return arr[colorIndex]
-}
+let nextColor = arr => {
+  let colorIndex = Math.floor(Math.random() * arr.length);
+  return arr[colorIndex];
+};
 let stepId;
 let isActive = false;
 
-start.addEventListener('click', ()=>{ 
-if(!isActive){
-    stepId =setInterval(()=>
-    body.style.backgroundColor = nextColor(colors),
-    1000
-    )
-}
-  isActive=true
-})
-stop.addEventListener('click', ()=>
-{clearInterval(stepId);
-isActive= false}
-)*/
-
+start.addEventListener("click", () => {
+  if (!isActive) {
+    stepId = setInterval(
+      () => (body.style.backgroundColor = nextColor(colors)),
+      1000
+    );
+  }
+  isActive = true;
+});
+stop.addEventListener("click", () => {
+  clearInterval(stepId);
+  isActive = false;
+});
+*/
 /*
  * Напиши функцию delay(ms), которая возвращает промис,
  * переходящий в состояние "resolved" через ms миллисекунд.
@@ -101,13 +101,13 @@ function delay(ms){
 delay(2000).then(logger); // Resolved after 2000ms
 delay(1000).then(logger); // Resolved after 1000ms
 delay(1500).then(logger); // Resolved after 1500ms
-*/
 
+*/
 /*
  * Перепиши функцию updateActiveState так, чтобы она
  * не использовала callback-функцию, а возвращала промис.
  */
-
+/*
 const users = [
   { name: "Mango", active: true },
   { name: "Poly", active: false },
@@ -128,7 +128,7 @@ const updateActiveState = (users, callback) => {
 };
 
 updateActiveState(users).then(console.table);
-
+*/
 /*
  * Должно работать так
  *
@@ -156,7 +156,7 @@ updateActiveState(users).then(console.table);
  * Если же пользователь ввел не число, то промис выполняется с ошибкой
  * и значением "Некорректный ввод!".
  */
-
+/*
 const DELAY = 1000;
 
 const quantity = 100;
@@ -177,3 +177,4 @@ processOrder(500)
 processOrder("lorem")
   .then(console.log)
   .catch(console.log); // Некорректный ввод!
+*/
