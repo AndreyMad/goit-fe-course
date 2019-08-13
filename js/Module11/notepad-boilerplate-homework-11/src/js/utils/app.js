@@ -73,6 +73,7 @@ function editNote({ target }) {
       target.closest(".note-list__item").dataset.id
     );
     showModal()
+    
     inputBodyValue.value = noteToEdit.body;
     inputTitleValue.value = noteToEdit.title;
     refs.modalForm.removeEventListener("submit", submit);
@@ -87,8 +88,6 @@ function saveEdited(e) {
     body: inputBodyValue.value
   });
   rootRefresh();
-  inputTitleValue.value = "";
-  inputBodyValue.value = "";
   refs.modalForm.addEventListener("submit", submit);
   refs.modalForm.removeEventListener("submit", saveEdited);
   pushToLocalStorage();
@@ -132,6 +131,8 @@ let pushToLocalStorage = () => {
 };
 let showModal = () => {
   MicroModal.show("note-editor-modal");
+  inputTitleValue.value = "";
+  inputBodyValue.value = "";
 };
 let closeModal = () => {
   MicroModal.close("note-editor-modal");
