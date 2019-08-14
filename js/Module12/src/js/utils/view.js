@@ -6,6 +6,7 @@ let refs={
   modalBtn : document.querySelector(".page-header__button")
 }
 function renderNoteList(listRef, note) {
+
   const listItems = note.map(item => template(item)).join('');
 
   listRef.insertAdjacentHTML('beforeend', listItems);

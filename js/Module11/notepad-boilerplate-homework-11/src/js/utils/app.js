@@ -1,17 +1,18 @@
 import initialNotes from "../../assets/notes.json";
 import { PRIORITY_TYPES } from "./constants";
 import Notepad from "./notepad-model";
-import { refs, renderNoteList } from "./view";
+import {refs, renderNoteList} from "./view";
 import MicroModal from "micromodal";
 import { Notyf } from "notyf";
-import "notyf/notyf.min.css";
+import 'notyf/notyf.min.css';
 
-const notyf = new Notyf({ duration: 2000 });
+const notyf = new Notyf({duration:2000});
 
 let inputTitleValue = document.getElementsByName("note_title")[0];
 let inputBodyValue = document.getElementsByName("note_body")[0];
 let shortId = require("shortid");
 let notepad;
+
 
 if (localStorage.getItem("notes") !== null) {
   let localNotes = JSON.parse(localStorage.getItem("notes"));
@@ -19,20 +20,20 @@ if (localStorage.getItem("notes") !== null) {
 } else {
   notepad = new Notepad(initialNotes);
 }
-renderNoteList(refs.root, notepad.notes);
+renderNoteList(refs.root, notepad.notes)
 
 function deleteNote({ target }) {
   if (target.parentNode.dataset.action === "delete-note") {
     notepad.deleteNote(target.closest(".note-list__item").dataset.id);
     target.closest(".note-list__item").remove();
-    notyf.success("Заметка успешно удалена!");
+    notyf.success('Заметка успешно удалена!')
     pushToLocalStorage();
   }
 }
 
 function addListItem(listRef, note) {
-  listRef.insertAdjacentHTML("beforeend", note);
-  rootRefresh();
+  listRef.insertAdjacentHTML('beforeend', note)
+  rootRefresh()
 }
 
 function submit(e) {
@@ -49,7 +50,7 @@ function submit(e) {
     addListItem(refs.root, newNote);
     pushToLocalStorage();
     closeModal();
-    notyf.success("Заметка добалена!");
+    notyf.success('Заметка добалена!');
   } else notyf.error("Необходимо заполнить все поля!");
 }
 
@@ -58,6 +59,9 @@ function filterNotes({ target }) {
   renderNoteList(refs.root, notepad.filterNotesByQuery(target.value));
 }
 
+refs.modalForm.addEventListener("submit", submit);
+refs.root.addEventListener("click", deleteNote);
+refs.inputValue.addEventListener("input", filterNotes);
 //renderNoteList(root, notepad.notes);
 
 //////////////////////////////////////////
@@ -68,14 +72,10 @@ function editNote({ target }) {
     noteToEdit = notepad.findNoteById(
       target.closest(".note-list__item").dataset.id
     );
-<<<<<<< HEAD
-    showModal()
-    
-=======
     showModal();
->>>>>>> 60efc3b8e0454d16acc9081da17880c02faf658b
     inputBodyValue.value = noteToEdit.body;
     inputTitleValue.value = noteToEdit.title;
+
     refs.modalForm.removeEventListener("submit", submit);
     refs.modalForm.addEventListener("submit", saveEdited);
   }
@@ -88,15 +88,11 @@ function saveEdited(e) {
     body: inputBodyValue.value
   });
   rootRefresh();
-<<<<<<< HEAD
-=======
-  clearModal();
->>>>>>> 60efc3b8e0454d16acc9081da17880c02faf658b
   refs.modalForm.addEventListener("submit", submit);
   refs.modalForm.removeEventListener("submit", saveEdited);
   pushToLocalStorage();
   closeModal();
-  notyf.success("Заметка успешно обновлена!!!");
+  notyf.success('Заметка успешно обновлена!!!')
 }
 
 function changePriority({ target }) {
@@ -106,10 +102,12 @@ function changePriority({ target }) {
   if (
     target.parentNode.dataset.action === "decrease-priority" &&
     noteToEdit.priority > 0
+   
   ) {
     noteToEdit.priority--;
-    pushToLocalStorage();
+    pushToLocalStorage()
     rootRefresh();
+    
   }
   if (
     target.parentNode.dataset.action === "increase-priority" &&
@@ -118,6 +116,7 @@ function changePriority({ target }) {
     noteToEdit.priority++;
     pushToLocalStorage();
     rootRefresh();
+  
   }
 }
 function rootRefresh() {
@@ -131,23 +130,12 @@ let pushToLocalStorage = () => {
   localStorage.setItem("notes", noteToLocal);
 };
 let showModal = () => {
-  clearModal();
   MicroModal.show("note-editor-modal");
-  inputTitleValue.value = "";
-  inputBodyValue.value = "";
 };
 let closeModal = () => {
   MicroModal.close("note-editor-modal");
 };
-let clearModal = () => {
-  inputTitleValue.value = "";
-  inputBodyValue.value = "";
-};
 
-/////listeners
-refs.modalForm.addEventListener("submit", submit);
-refs.root.addEventListener("click", deleteNote);
-refs.inputValue.addEventListener("input", filterNotes);
 refs.root.addEventListener("click", editNote);
 refs.root.addEventListener("click", changePriority);
 refs.modalBtn.addEventListener("click", showModal);

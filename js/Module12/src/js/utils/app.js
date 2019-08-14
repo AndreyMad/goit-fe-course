@@ -26,10 +26,13 @@ renderNoteList(refs.root, notepad.notes);
 
 function deleteNote({ target }) {
   if (target.parentNode.dataset.action === "delete-note") {
-    notepad.deleteNote(target.closest(".note-list__item").dataset.id);
-    target.closest(".note-list__item").remove();
-    notyf.success("Заметка успешно удалена!");
-    pushToLocalStorage();
+    notepad.deleteNote(target.closest(".note-list__item").dataset.id)
+    .then(()=>{
+      target.closest(".note-list__item").remove();
+      notyf.success("Заметка успешно удалена!");
+    })
+    
+
   }
 }
 
@@ -41,24 +44,22 @@ function addListItem(listRef, note) {
 function submit(e) {
   e.preventDefault();
   if (inputTitleValue.value && inputBodyValue.value) {
-    let newNote = notepad.saveNote({
+    notepad.saveNote({
       id: shortId(),
       title: inputTitleValue.value,
       body: inputBodyValue.value,
       priority: PRIORITY_TYPES.LOW
-    });
-    inputTitleValue.value = "";
-    inputBodyValue.value = "";
-    addListItem(refs.root, newNote);
-    pushToLocalStorage();
+    }).then(noteToAdd=>addListItem(refs.root, noteToAdd))
+    clearModal(); 
     closeModal();
     notyf.success("Заметка добалена!");
-  } else notyf.error("Необходимо заполнить все поля!");
+  } else notyf.error("Необходимо заполнить все поля!")
 }
 
 function filterNotes({ target }) {
   refs.root.innerHTML = "";
-  renderNoteList(refs.root, notepad.filterNotesByQuery(target.value));
+  notepad.filterNotesByQuery(target.value)
+  .then(filteredArr=> renderNoteList(refs.root, filteredArr));
 }
 
 function editNote({ target }) {
@@ -79,14 +80,16 @@ function saveEdited(e) {
   notepad.updateNoteContent(noteToEdit.id, {
     title: inputTitleValue.value,
     body: inputBodyValue.value
-  });
-  rootRefresh();
+  }).then(()=>{
+    rootRefresh();
+    notyf.success("Заметка успешно обновлена!!!");
+  })
+ 
   clearModal();
   refs.modalForm.addEventListener("submit", submit);
   refs.modalForm.removeEventListener("submit", saveEdited);
-  pushToLocalStorage();
   closeModal();
-  notyf.success("Заметка успешно обновлена!!!");
+  
 }
 
 function changePriority({ target }) {
@@ -97,17 +100,17 @@ function changePriority({ target }) {
     target.parentNode.dataset.action === "decrease-priority" &&
     noteToEdit.priority > 0
   ) {
-    noteToEdit.priority--;
-    pushToLocalStorage();
-    rootRefresh();
+    notepad.updateNotePriority(target.closest(".note-list__item").dataset.id, -1)
+    .then(()=> rootRefresh())
+
+   
   }
   if (
     target.parentNode.dataset.action === "increase-priority" &&
     noteToEdit.priority < 2
   ) {
-    noteToEdit.priority++;
-    pushToLocalStorage();
-    rootRefresh();
+    notepad.updateNotePriority(target.closest(".note-list__item").dataset.id, 1)
+    .then(()=> rootRefresh())
   }
 }
 function rootRefresh() {
@@ -115,11 +118,7 @@ function rootRefresh() {
   renderNoteList(refs.root, notepad.notes);
 }
 
-let pushToLocalStorage = () => {
-  let noteToLocal = JSON.stringify(notepad.notes);
 
-  localStorage.setItem("notes", noteToLocal);
-};
 let showModal = () => {
   clearModal();
   MicroModal.show("note-editor-modal");
