@@ -11,5 +11,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "mochapack": "^1.1.3"
   }
 }

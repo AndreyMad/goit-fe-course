@@ -14,8 +14,6 @@ let shortId = require("shortid");
 let notepad;
 let noteToEdit = "";
 
-
-
 if (localStorage.getItem("notes") !== null) {
   let localNotes = JSON.parse(localStorage.getItem("notes"));
   notepad = new Notepad(localNotes);
@@ -130,7 +128,6 @@ let clearModal = () => {
   inputTitleValue.value = "";
   inputBodyValue.value = "";
 };
-
 
 /////listeners
 refs.modalForm.addEventListener("submit", submit);
