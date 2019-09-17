@@ -53,11 +53,6 @@ function renderResult(country){
 }
 */
 
-
-
-
-
-
 /*
   Написать функцию fetchUserData, которая использует
   API_URL + текущее значение input для составления запроса.
@@ -79,7 +74,7 @@ function renderResult(country){
   
   Все необходимые данные есть в ответе от API.
 */
-
+/*
 const input = document.querySelector("input");
 const form = document.querySelector(".search-form");
 const result = document.querySelector(".result");
@@ -110,4 +105,84 @@ function render(user){
     publicRepos.textContent= `Public repos: ${user.public_repos}`
     result.append(ava, userName, about, publicRepos)
     input.value='';
+}
+*/
+
+/*
+  Документация API: https://jsonplaceholder.typicode.com/
+
+  Просмотр всех пользователей: https://jsonplaceholder.typicode.com/users/ 
+
+  Написать функцию fetchUsers, которая посылает get запрос.
+  Результатом fetch будет массив объектов.
+  
+  В таблицу .user-table добавить строки для каждого пользователя.
+  Каждая строка состоит из 5-ти столбцов указанного формата.
+  Кол-во строк будет такое как и кол-во объектов пользователей в ответе.
+  
+    Имя | Почта | Город | Вебсайт | Компания
+    Имя | Почта | Город | Вебсайт | Компания
+    и так далее для каждого пользователя...
+*/
+/*
+const form = document.querySelector(".search-form");
+const userTable = document.querySelector(".user-table");
+
+form.addEventListener("submit", fetchUsers);
+
+
+function fetchUsers(evt) {
+  event.preventDefault();
+  fetch("https://jsonplaceholder.typicode.com/users/")
+    .then(response => response.json())
+    .then(data => renderData(data))
+    .catch(err => console.log(err));
+}
+function renderData(data) {
+  data.map(user => {
+    let row = document.createElement("tr");
+    let name = document.createElement("td");
+    let email = document.createElement("td");
+    let city = document.createElement("td");
+    let webSite = document.createElement("td");
+    let company = document.createElement("td");
+    name.textContent = user.name;
+    email.textContent = user.email;
+    city.textContent = user.address.city;
+    webSite.textContent = user.website;
+    company.textContent = user.company.name;
+    row.append(name, email, city, webSite, company);
+    userTable.append(row);
+  });
+}
+*/
+
+/*
+  Документация API: https://jsonplaceholder.typicode.com/
+
+  Написать функцию getUserById, которая посылает запрос 
+  на получение информации о пользоватеьте с id (число) введенным в input. 
+  Не забывайте что значение input это строка.
+ 
+  Объект что придет в ответе используйте для вывода информации
+  о пользователе в элементе .result
+  
+  Если пользователя с таким идентификатором в базе данных нет,
+  в элемент .result вывести строку "Ошибка! Пользователя с таким id не существует"
+*/
+
+const input = document.querySelector("input");
+const form = document.querySelector(".search-form");
+const result = document.querySelector(".result");
+
+form.addEventListener("submit", getUserById);
+
+function getUserById(evt) {
+  event.preventDefault();
+  let id = Number(input.value);
+  console.log(id);
+  fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    .then(response => response.json())
+    .then(user => console.log(user))
+    .catch(err => console.log(err));
 }
