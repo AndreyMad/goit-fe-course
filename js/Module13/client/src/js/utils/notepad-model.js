@@ -1,3 +1,4 @@
+import * as api from '../../services/api'
 export default class Notepad {
   constructor(notes = []) {
     this._notes = notes;
@@ -9,67 +10,69 @@ export default class Notepad {
     HIGH: 2
   };
   get notes() {
-    return this._notes;
+    return api.getNotes().then(notesFromServer=>{
+       this._notes.push(...notesFromServer);
+
+      return this._notes;
+    })
   }
 
   findNoteById(id) {
-    for (let element of this.notes) {
+    for (let element of this._notes) {
       if (id === element.id) {
         return element;
       }
     }
   }
 saveNote(note){
-  return new Promise((resolve)=>{
-    setTimeout(() => {
-      this._notes.push(note);
-      this.pushToLocalStorage();
-      resolve(note);
-    }, 200);
-
-  })
+  return api.saveNote(note)
+    .then(newNote => {
+      this._notes.push(newNote);
+      return newNote;
+    })
 }
  
 
-  deleteNote(id) {
-    return new Promise(resolve=>{
-  setTimeout(() => {
-  let indexToDelete = this.notes.indexOf(this.findNoteById(id));
-  resolve(this.notes.splice(indexToDelete, 1));
-  this.pushToLocalStorage();
-    }, 300);
+deleteNote(id) {
+  api.deleteNote(id)
+    .then(() => {
+      const index = this._notes.indexOf(this.findNoteById(id));
+      this._notes.splice(index, 1);
+
     })
- 
-  }
+}
 
   updateNoteContent(id, updatedContent) {
-    return new Promise(resolve=>{
-      setTimeout(() => {
-        let result = Object.assign(this.findNoteById(id), updatedContent);
-       this.pushToLocalStorage();
-        resolve(result);
-      }, 300);
-    })
-   
+    return api.updateNoteContent(id, updatedContent)
+      .then(updatedNote => {
+        
+        if (this.findNoteById(id)) {
+          return Object.assign(this.findNoteById(id), updatedNote);
+        }
+      })
   }
+
+
+
 
 
   updateNotePriority(id, priority) {
     return new Promise(resolve=>{
       setTimeout(() => {
         let result = (this.findNoteById(id).priority += priority);
-        this.pushToLocalStorage();
+  
         resolve(result);
       }, 0);
     })
    
   }
 
+  
   filterNotesByQuery(query) {
     return new Promise(resolve=>{
       setTimeout(() => {
         let newNote = [];
-        for (let element of this.notes) {
+        for (let element of this._notes) {
           if (
             element.title.toLowerCase().includes(query.toLowerCase()) ||
             element.body.toLowerCase().includes(query.toLowerCase())
@@ -96,8 +99,4 @@ saveNote(note){
       }, 300);
     })
     
-  }
-  pushToLocalStorage(){
-    localStorage.setItem("notes", JSON.stringify(this.notes));
-  }
-}
+  }}

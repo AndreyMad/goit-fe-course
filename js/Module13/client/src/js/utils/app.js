@@ -11,34 +11,35 @@ const notyf = new Notyf({ duration: 2000 });
 let inputTitleValue = document.getElementsByName("note_title")[0];
 let inputBodyValue = document.getElementsByName("note_body")[0];
 let shortId = require("shortid");
-let notepad;
+let notepad = new Notepad;
 let noteToEdit = "";
 
-if (localStorage.getItem("notes") !== null) {
-  let localNotes = JSON.parse(localStorage.getItem("notes"));
-  notepad = new Notepad(localNotes);
-} else {
-  notepad = new Notepad(initialNotes);
-}
 
-let urlNotes = "http://localhost:3000/notes";
+notepad.notes
+  .then(initalNotes => renderNoteList(refs.root, initalNotes))
+  .catch(console.log)
 
-let notesFromServer = fetch(urlNotes)
-  .then(response => response.json())
-  .catch(err => console.log(`Error while catching: ${err}`));
-  console.log(notesFromServer);
-renderNoteList(refs.root, notepad.notes);
 
 function deleteNote({ target }) {
   if (target.parentNode.dataset.action === "delete-note") {
-    notepad
-      .deleteNote(target.closest(".note-list__item").dataset.id)
-      .then(() => {
-        target.closest(".note-list__item").remove();
-        notyf.success("Заметка успешно удалена!");
-      });
+    notepad.deleteNote(target.closest(".note-list__item").dataset.id)
+    target.closest(".note-list__item").remove();
+    notyf.success("Заметка успешно удалена!");
+
+    
+
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 function addListItem(listRef, note) {
   listRef.insertAdjacentHTML("beforeend", note);
@@ -48,25 +49,22 @@ function addListItem(listRef, note) {
 function submit(e) {
   e.preventDefault();
   if (inputTitleValue.value && inputBodyValue.value) {
-    notepad
-      .saveNote({
-        id: shortId(),
-        title: inputTitleValue.value,
-        body: inputBodyValue.value,
-        priority: PRIORITY_TYPES.LOW
-      })
-      .then(noteToAdd => addListItem(refs.root, noteToAdd));
-    clearModal();
+    notepad.saveNote({
+      id: shortId(),
+      title: inputTitleValue.value,
+      body: inputBodyValue.value,
+      priority: PRIORITY_TYPES.LOW
+    }).then(noteToAdd=>addListItem(refs.root, noteToAdd))
+    clearModal(); 
     closeModal();
     notyf.success("Заметка добалена!");
-  } else notyf.error("Необходимо заполнить все поля!");
+  } else notyf.error("Необходимо заполнить все поля!")
 }
 
 function filterNotes({ target }) {
   refs.root.innerHTML = "";
-  notepad
-    .filterNotesByQuery(target.value)
-    .then(filteredArr => renderNoteList(refs.root, filteredArr));
+  notepad.filterNotesByQuery(target.value)
+  .then(filteredArr=> renderNoteList(refs.root, filteredArr));
 }
 
 function editNote({ target }) {
@@ -84,20 +82,19 @@ function editNote({ target }) {
 
 function saveEdited(e) {
   e.preventDefault();
-  notepad
-    .updateNoteContent(noteToEdit.id, {
-      title: inputTitleValue.value,
-      body: inputBodyValue.value
-    })
-    .then(() => {
-      rootRefresh();
-      notyf.success("Заметка успешно обновлена!!!");
-    });
-
+  notepad.updateNoteContent(noteToEdit.id, {
+    title: inputTitleValue.value,
+    body: inputBodyValue.value
+  }).then(()=>{
+    rootRefresh();
+    notyf.success("Заметка успешно обновлена!!!");
+  })
+ 
   clearModal();
   refs.modalForm.addEventListener("submit", submit);
   refs.modalForm.removeEventListener("submit", saveEdited);
   closeModal();
+  
 }
 
 function changePriority({ target }) {
@@ -108,23 +105,24 @@ function changePriority({ target }) {
     target.parentNode.dataset.action === "decrease-priority" &&
     noteToEdit.priority > 0
   ) {
-    notepad
-      .updateNotePriority(target.closest(".note-list__item").dataset.id, -1)
-      .then(() => rootRefresh());
+    notepad.updateNotePriority(target.closest(".note-list__item").dataset.id, -1)
+    .then(()=> rootRefresh())
+
+   
   }
   if (
     target.parentNode.dataset.action === "increase-priority" &&
     noteToEdit.priority < 2
   ) {
-    notepad
-      .updateNotePriority(target.closest(".note-list__item").dataset.id, 1)
-      .then(() => rootRefresh());
+    notepad.updateNotePriority(target.closest(".note-list__item").dataset.id, 1)
+    .then(()=> rootRefresh())
   }
 }
 function rootRefresh() {
   refs.root.innerHTML = "";
-  renderNoteList(refs.root, notepad.notes);
+  renderNoteList(refs.root, notepad._notes);
 }
+
 
 let showModal = () => {
   clearModal();
